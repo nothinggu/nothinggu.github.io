@@ -1,13 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[article]]></title>
-    <url>%2F2017%2F05%2F05%2Farticle%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[常用容器（Collection）实现类总结（一）——ArrayList]]></title>
+    <url>%2F2017%2F05%2F06%2F%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E6%80%BB%E7%BB%93_two%2F</url>
+    <content type="text"><![CDATA[List 接口的大小可变数组的实现。实现了所有可选列表操作，并允许包括 null 在内的所有元素。除了实现 List 接口外，此类还提供一些方法来操作内部用来存储列表的数组的大小。 （Resizable-array implementation of the List interface. Implements all optional list operations, and permits all elements, including null. In addition to implementing the List interface, this class provides methods to manipulate the size of the array that is used internally to store the list.） 每个 ArrayList 实例都有一个容量。该容量是指用来存储列表元素的数组的大小。它总是至少等于列表的大小。随着向 ArrayList 中不断添加元素，其容量也自动增长。 （Each ArrayList instance has a capacity. The capacity is the size of the array used to store the elements in the list. It is always at least as large as the list size. As elements are added to an ArrayList, its capacity grows automatically. ） ArrayList优、缺点分析优点： 线性有序存储，可重复存储 ArrayList是一种动态数组，首先在构造一个实例的时候，构造方法会给实例一个初始大小，当元素长度不够时，调用Arrays.copyOf方法，拷贝当前数组到一个新的长度更大的数组 查找快且方便，查找某数据时通过下标直接获取元素 缺点： 插入、增添、删除元素速率较低 线程不安全（Vector是线程安全的，但是效率不如ArrayList） 基本实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849public class MyArrayList &#123; private Object[] elementDate; private int size; public Object get(int index) &#123; if(index&lt;0 || index&gt;=size) &#123; try &#123; throw new Exception(); &#125; catch (Exception e) &#123; e.printStackTrace(); &#125; &#125; return elementDate[index]; &#125; public boolean isEmpty() &#123; return size == 0; &#125; public int size() &#123; return size; &#125; public MyArrayList()&#123; this(10); //调用有参构造方法，初始化数组大小为10 &#125; public MyArrayList(int initialCapacity)&#123; if(initialCapacity&lt;0)&#123; try &#123; throw new Exception(); &#125; catch (Exception e) &#123; e.printStackTrace(); &#125; &#125; elementDate = new Object[initialCapacity]; &#125; public void add(Object obj) &#123; if(size==elementDate.length) &#123; Object[] newArrayList = new Object[size*2+1]; //当数组达到上限，创建新的数组对象 //System.arraycopy(elementDate, 0, newArrayList, 0, elementDate.length); //使用arraycopy方法也没问题，代码更简洁 for(int i=0; i&lt;newArrayList.length; i++) &#123; newArrayList[i] = elementDate[i]; //遍历旧数组元素，存入新数组 elementDate = newArrayList; //将新数组地址传递给旧数组 &#125; &#125; elementDate[size++] = obj; &#125; 对于remove方法的详细说明 remove方法可以根据索引值（index）或者指定对象删除元素： 123456public void remove(int index) &#123; rangeCheck(index); elementDate[index] = null; System.arraycopy(elementDate, index+1, elementDate, index, elementDate.length-(index+1)); size--; &#125; 当出现索引越界时，调用方法rangeCheck，代码： 123456789public void rangeCheck(int index) &#123; if(index &lt; 0 || index &gt;= this.size) &#123; try &#123; throw new Exception(); &#125;catch(Exception e) &#123; e.printStackTrace(); &#125; &#125; &#125; remove方法还有个重载（override）方法： 12345678910111213141516public boolean remove(Object o) &#123; if (o == null) &#123; for (int index = 0; index &lt; size; index++) if (elementData[index] == null) &#123; fastRemove(index); //fastRemove方法类似于索引删除方法 return true; &#125; &#125; else &#123; for (int index = 0; index &lt; size; index++) if (o.equals(elementData[index])) &#123; //此处用的equals方法，为对象的值比较 fastRemove(index); return true; //这里return后返回boolean，所以只会删除第一次出现的对象 &#125; &#125; return false; &#125; remove方法的测试结果： 1234567891011public static void main(String[] args) &#123; ArrayList list = new ArrayList(); list.add("aa"); list.add("bb"); list.add(new Date()); list.add(new Date()); list.remove(new Date()); for(int i = 0; i &lt; list.size(); i++) &#123; System.out.println(list.get(i)); &#125; &#125;]]></content>
+      <categories>
+        <category>DATA STRUCTURES</category>
+      </categories>
+      <tags>
+        <tag>Data Structures</tag>
+      </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2017%2F05%2F05%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[冒泡算法的逻辑分析]]></title>
+    <url>%2F2017%2F05%2F06%2F%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[在给定的一个数据中，我们有时候需要将数据对象进行某种顺序排列，常见的排列方式为升序或是降序，冒泡算法是处理这类排序的经典方法。 给定一个数组 1int[] arr = &#123;9,8,7,6,5&#125;; 要将这个降序数组重排为升序数组，我们可以通过： 将9和8进行比较，较大者和较小者换位–&gt;{8,9,7,6,5} 将9和7进行比较，较大者和较小者换位–&gt;{8,7,9,6,5} … 最终得到{8,7,6,5,9} 基本实现:123456789int[] arr = &#123; 9, 8, 7, 6, 5 &#125;; for (int i = 0; i &lt; arr.length - 1; i++) &#123; if (arr[i] &gt; arr[i + 1]) &#123; int temp = arr[i]; arr[i] = arr[i + 1]; arr[i + 1] = temp; &#125; &#125; 之后，需要开始第二轮的排序，自然想到使用嵌套for循环来实现： 1234567891011int[] arr = &#123; 9, 8, 7, 6, 5 &#125;; for (int j = 0; j &lt; arr.length - 1; j++) &#123; for (int i = 0; i &lt; arr.length - 1; i++) &#123; if (arr[i] &gt; arr[i + 1]) &#123; int temp = arr[i]; arr[i] = arr[i + 1]; arr[i + 1] = temp; &#125; &#125; &#125; 这时，我们会发现在遍历过程中，每一次遍历都会增加一次不必要的重复比较，具体逻辑分析过程可以列举每一次的两个数字比较发现。因此在第二次for循环中，随着遍历的递进，都需要减少1次arr.length,实际上可以在内部for循环中将循环条件改为arr.length-1 —&gt; arr.length-(1+j): 1234567891011int[] arr = &#123; 9, 8, 7, 6, 5 &#125;; for (int j = 0; j &lt; arr.length - 1; j++) &#123; for (int i = 0; i &lt; arr.length - (1 + j); i++) &#123; if (arr[i] &gt; arr[i + 1]) &#123; int temp = arr[i]; arr[i] = arr[i + 1]; arr[i + 1] = temp; &#125; &#125; &#125; 现在，这个排序算法已经很好了，但是还可以继续优化,如果我们遇到仅需要一次排序就可以完成的数组，如:{9，5，6，7，8}，我们可以通过加入if和boolean来升级当前排序： 最终效果:12345678910111213141516int[] arr = &#123; 9,5,6,7,8 &#125;; boolean b = true; for (int j = 0; j &lt; arr.length - 1; j++) &#123; b = false; for (int i = 0; i &lt; arr.length - 1 - j; i++) &#123; if (arr[i] &gt; arr[i + 1]) &#123; int temp = arr[i]; arr[i] = arr[i + 1]; arr[i + 1] = temp; b = true; System.out.println(Arrays.toString(arr)); &#125; &#125; if(b == false) break; &#125; 最简单的排序算法,但是很实用!!!]]></content>
+      <categories>
+        <category>ALGORITHMS</category>
+      </categories>
+      <tags>
+        <tag>Algorithms</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[常用容器（Collection）实现类总结（零）]]></title>
+    <url>%2F2017%2F05%2F06%2F%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E6%80%BB%E7%BB%93_one%2F</url>
+    <content type="text"><![CDATA[容器（Collection） 层次结构中的根（root）接口。Collection 表示一组对象，这些对象也称为 collection 的元素。一些 collection 允许有重复的元素，而另一些则不允许。一些 collection 是有序的，而另一些则是无序的。JDK 不提供此接口的任何直接 实现：它提供更具体的子接口（如 Set 和 List）实现。此接口通常用来传递 collection，并在需要最大普遍性的地方操作这些 collection。 （The root interface in the collection hierarchy. A collection represents a group of objects, known as its elements. Some collections allow duplicate elements and others do not. Some are ordered and others unordered. The JDK does not provide any direct implementations of this interface: it provides implementations of more specific subinterfaces like Set and List. This interface is typically used to pass collections around and manipulate them where maximum generality is desired.） 其中，常用的具体类有： ArrayList：底层实现为数组（Array），可以重复放置元素，且为线性排列。优点是查找方便，缺点是增、删速率低。 LinkedList：底层实现为链表（Link list），优点是删除和添加的效率很高，但随机访问元素时效率较ArrayList类低。 HashMap：通过键值对（Key—Value）映射的数据结构（类似于字典的用法），且Key有且唯一，但是一个Key可以一对多个Value，细节后续讨论。优点是可以通过Key快速查找并操作相关数据，很方便。 HashSet：不允许重复的对象传入，且不能保证传入数据能够有序迭代（ It makes no guarantees as to the iteration order of the set）。优点是HashSet利用Hash函数进行了查询效率上的优化。]]></content>
+      <categories>
+        <category>DATA STRUCTURES</category>
+      </categories>
+      <tags>
+        <tag>Data Structures</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[迭代器小结]]></title>
+    <url>%2F2017%2F05%2F06%2F%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%B0%8F%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[为什么使用迭代器? 数组的遍历，可以通过for循环来实现，其原因是数组对于数据的储存是有序的(order)；但是，对于Set这种无序(no order) 的数据结构，就无法通过for循环来实现，此时，我们就需要引入一种新的访问方式来实现对数据的操作——迭代器。 迭代器是一种轻量级的对象操作，其接口有四个抽象方法： 12345678910111213public interface Iterator&lt;E&gt; &#123; boolean hasNext(); E next(); default void remove() &#123; throw new UnsupportedOperationException("remove"); &#125; default void forEachRemaining(Consumer&lt;? super E&gt; action) &#123; Objects.requireNonNull(action); while (hasNext()) action.accept(next()); &#125;&#125; 方法简介: –Object next()：返回集合里下一个元素。 –boolean hasNext()：如果被迭代的集合还元素没有被遍历，则返回true。 –void remove() ：删除集合里上一次next方法返回的元素 –void forEachRemaining(Consumer action)，这是Java 8为Iterator新增的默认方法，该方法可使用Lambda表达式来遍历集合元素。 迭代器的内部简单实现：12345678910111213141516171819202122public class SimpleIter &#123; private int size =elem.length; private int coursor=-1; //由实现的方法可知，游标在开始遍历List的时候从下标【0】开始，所以初始值赋予-1 public int size()&#123; return this.size; &#125; public boolean hasNext()&#123; return coursor+1&lt;size; //为了防止下标越界，所以coursor+1小于List长度 &#125; public String next()&#123; coursor++; return elem[coursor]; &#125; public void remove()&#123; System.arraycopy(elem, coursor+1, elem, coursor,this.size-(coursor+1)); this.size--; this.coursor--; //为了使游标可以指向删除某元素之后的正确指向，每次删除元素，需要coursor-1 &#125;]]></content>
+      <categories>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
   </entry>
 </search>

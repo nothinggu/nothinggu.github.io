@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-05T12:44:23.758Z</updated>
+  <updated>2017-05-06T09:37:32.700Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,56 +16,209 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>article</title>
-    <link href="http://yoursite.com/2017/05/05/article/"/>
-    <id>http://yoursite.com/2017/05/05/article/</id>
-    <published>2017-05-05T12:44:11.220Z</published>
-    <updated>2017-05-05T12:44:23.758Z</updated>
+    <title>常用容器（Collection）实现类总结（一）——ArrayList</title>
+    <link href="http://yoursite.com/2017/05/06/%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E6%80%BB%E7%BB%93_two/"/>
+    <id>http://yoursite.com/2017/05/06/常用容器总结_two/</id>
+    <published>2017-05-06T09:21:36.176Z</published>
+    <updated>2017-05-06T09:37:32.700Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <content type="html"><![CDATA[<p><em>List 接口的大小可变数组的实现。实现了所有可选列表操作，并允许包括 null 在内的所有元素。除了实现 List 接口外，此类还提供一些方法来操作内部用来存储列表的数组的大小。</em></p>
+<p>（Resizable-array implementation of the List interface. Implements all optional list operations, and permits all elements, including null. In addition to implementing the List interface, this class provides methods to manipulate the size of the array that is used internally to store the list.）</p>
+<p><em>每个 ArrayList 实例都有一个容量。该容量是指用来存储列表元素的数组的大小。它总是至少等于列表的大小。随着向 ArrayList 中不断添加元素，其容量也自动增长。</em></p>
+<p>（Each ArrayList instance has a capacity. The capacity is the size of the array used to store the elements in the list. It is always at least as large as the list size. As elements are added to an ArrayList, its capacity grows automatically. ）<br><a id="more"></a></p>
+<h3 id="ArrayList优、缺点分析"><a href="#ArrayList优、缺点分析" class="headerlink" title="ArrayList优、缺点分析"></a>ArrayList优、缺点分析</h3><p>优点：</p>
+<ul>
+<li>线性有序存储，可重复存储</li>
+<li>ArrayList是一种动态数组，首先在构造一个实例的时候，构造方法会给实例一个初始大小，当元素长度不够时，调用Arrays.copyOf方法，拷贝当前数组到一个新的长度更大的数组</li>
+<li>查找快且方便，查找某数据时通过下标直接获取元素</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>插入、增添、删除元素速率较低</li>
+<li>线程不安全（Vector是线程安全的，但是效率不如ArrayList）</li>
+</ul>
+<h3 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现"></a>基本实现</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">public class MyArrayList &#123;</div><div class="line">    private Object[] elementDate;</div><div class="line">    </div><div class="line">    private int size;</div><div class="line">    </div><div class="line">    public Object get(int index) &#123;</div><div class="line">        if(index&lt;0 || index&gt;=size) &#123;</div><div class="line">            try &#123;</div><div class="line">                throw new Exception();</div><div class="line">            &#125; catch (Exception e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return elementDate[index];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public boolean isEmpty() &#123;</div><div class="line">        return size == 0;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public int size() &#123;</div><div class="line">        return size;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public MyArrayList()&#123;</div><div class="line">        this(10);          //调用有参构造方法，初始化数组大小为10</div><div class="line">    &#125;</div><div class="line">    public MyArrayList(int initialCapacity)&#123;</div><div class="line">        if(initialCapacity&lt;0)&#123;</div><div class="line">            try &#123;</div><div class="line">                throw new Exception();</div><div class="line">            &#125; catch (Exception e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        elementDate = new Object[initialCapacity];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void add(Object obj) &#123;</div><div class="line">        if(size==elementDate.length) &#123;</div><div class="line">            Object[] newArrayList = new Object[size*2+1]; //当数组达到上限，创建新的数组对象</div><div class="line">　　　　　　//System.arraycopy(elementDate, 0, newArrayList, 0, elementDate.length);  //使用arraycopy方法也没问题，代码更简洁</div><div class="line">            for(int i=0; i&lt;newArrayList.length; i++) &#123;</div><div class="line">                newArrayList[i] = elementDate[i];   //遍历旧数组元素，存入新数组</div><div class="line">                elementDate = newArrayList;      //将新数组地址传递给旧数组</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        elementDate[size++] = obj;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="对于remove方法的详细说明"><a href="#对于remove方法的详细说明" class="headerlink" title="对于remove方法的详细说明"></a>对于remove方法的详细说明</h3><ul>
+<li><p>remove方法可以根据索引值（index）或者指定对象删除元素：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">public void remove(int index) &#123;</div><div class="line">       rangeCheck(index);</div><div class="line">       elementDate[index] = null;</div><div class="line">       System.arraycopy(elementDate, index+<span class="number">1</span>, elementDate, index, elementDate.length-(index+<span class="number">1</span>));</div><div class="line">       size--;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>当出现索引越界时，调用方法rangeCheck，代码：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public void rangeCheck(int index) &#123;</div><div class="line">        <span class="keyword">if</span>(index &lt; <span class="number">0</span> <span class="params">||</span> index &gt;= this.size) &#123;   </div><div class="line">            try &#123;</div><div class="line">                throw new Exception();</div><div class="line">            &#125;catch(Exception e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>remove方法还有个重载（override）方法：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public boolean remove(Object o) &#123;</div><div class="line">        <span class="keyword">if</span> (o == null) &#123;</div><div class="line">            <span class="keyword">for</span> (int index = <span class="number">0</span>; index &lt; size; index++)</div><div class="line">                <span class="keyword">if</span> (elementData[index] == null) &#123;</div><div class="line">                    fastRemove(index);             <span class="regexp">//fast</span>Remove方法类似于索引删除方法</div><div class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">                &#125;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">for</span> (int index = <span class="number">0</span>; index &lt; size; index++)</div><div class="line">                <span class="keyword">if</span> (o.equals(elementData[index])) &#123;   <span class="regexp">//</span>此处用的equals方法，为对象的值比较</div><div class="line">                    fastRemove(index);</div><div class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;　　　　　　　　　　　　<span class="regexp">//</span>这里<span class="keyword">return</span>后返回boolean，所以只会删除第一次出现的对象　　　　　　　　</div><div class="line">                &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>remove方法的测试结果：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public static void main(String[] args) &#123;</div><div class="line">        ArrayList list = new ArrayList();</div><div class="line">        list.add(<span class="string">"aa"</span>);</div><div class="line">        list.add(<span class="string">"bb"</span>);</div><div class="line">        list.add(new Date());</div><div class="line">        list.add(new Date());</div><div class="line">        list.remove(new Date());</div><div class="line">        <span class="keyword">for</span>(int i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</div><div class="line">            System.out.println(list.get(i));</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p><img src="1.jpg" alt="loading~~~"></p>
+</li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;&lt;em&gt;List 接口的大小可变数组的实现。实现了所有可选列表操作，并允许包括 null 在内的所有元素。除了实现 List 接口外，此类还提供一些方法来操作内部用来存储列表的数组的大小。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;（Resizable-array implementation of the List interface. Implements all optional list operations, and permits all elements, including null. In addition to implementing the List interface, this class provides methods to manipulate the size of the array that is used internally to store the list.）&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;每个 ArrayList 实例都有一个容量。该容量是指用来存储列表元素的数组的大小。它总是至少等于列表的大小。随着向 ArrayList 中不断添加元素，其容量也自动增长。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;（Each ArrayList instance has a capacity. The capacity is the size of the array used to store the elements in the list. It is always at least as large as the list size. As elements are added to an ArrayList, its capacity grows automatically. ）&lt;br&gt;
     
     </summary>
     
+      <category term="DATA STRUCTURES" scheme="http://yoursite.com/categories/DATA-STRUCTURES/"/>
+    
+    
+      <category term="Data Structures" scheme="http://yoursite.com/tags/Data-Structures/"/>
     
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/05/05/hello-world/"/>
-    <id>http://yoursite.com/2017/05/05/hello-world/</id>
-    <published>2017-05-05T09:54:25.144Z</published>
-    <updated>2017-05-05T12:43:29.691Z</updated>
+    <title>冒泡算法的逻辑分析</title>
+    <link href="http://yoursite.com/2017/05/06/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/"/>
+    <id>http://yoursite.com/2017/05/06/冒泡排序/</id>
+    <published>2017-05-06T09:06:41.622Z</published>
+    <updated>2017-05-06T09:07:08.773Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <content type="html"><![CDATA[<p><em>在给定的一个数据中，我们有时候需要将数据对象进行某种顺序排列，常见的排列方式为升序或是降序，冒泡算法是处理这类排序的经典方法</em>。</p>
+<blockquote>
+<p>给定一个数组</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int[] arr = &#123;<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">5</span>&#125;;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>要将这个降序数组重排为升序数组，我们可以通过：</p>
+</blockquote>
+<ul>
+<li><p>将9和8进行比较，较大者和较小者换位–&gt;{8,9,7,6,5}</p>
+</li>
+<li><p>将9和7进行比较，较大者和较小者换位–&gt;{8,7,9,6,5}</p>
+</li>
+</ul>
+<p>…</p>
+<ul>
+<li>最终得到{8,7,6,5,9}<a id="more"></a>
+</li>
+</ul>
+<h2 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现:"></a>基本实现:</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">int[] arr = &#123; <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span> &#125;;</div><div class="line">        </div><div class="line">    <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (arr[i] &gt; arr[i + <span class="number">1</span>]) &#123;</div><div class="line">            int temp = arr[i];</div><div class="line">            arr[i] = arr[i + <span class="number">1</span>];</div><div class="line">            arr[i + <span class="number">1</span>] = temp;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>之后，需要开始第二轮的排序，自然想到使用嵌套for循环来实现：</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">int[] arr = &#123; <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span> &#125;;</div><div class="line">        </div><div class="line">    <span class="keyword">for</span> (int j = <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span>; j++) &#123;</div><div class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</div><div class="line">            <span class="keyword">if</span> (arr[i] &gt; arr[i + <span class="number">1</span>]) &#123;</div><div class="line">                int temp = arr[i];</div><div class="line">                arr[i] = arr[i + <span class="number">1</span>];</div><div class="line">                arr[i + <span class="number">1</span>] = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>这时，我们会发现在遍历过程中，每一次遍历都会增加一次不必要的重复比较，具体逻辑分析过程可以列举每一次的两个数字比较发现。因此在第二次for循环中，随着遍历的递进，都需要减少1次arr.length,实际上可以在内部for循环中将循环条件改为arr.length-1 —&gt;  arr.length-(1+j):</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">int[] arr = &#123; <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span> &#125;;</div><div class="line">        </div><div class="line">    <span class="keyword">for</span> (int j = <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span>; j++) &#123;</div><div class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; arr.length - (<span class="number">1</span> + j); i++) &#123;</div><div class="line">           <span class="keyword">if</span> (arr[i] &gt; arr[i + <span class="number">1</span>]) &#123;</div><div class="line">                int temp = arr[i];</div><div class="line">                arr[i] = arr[i + <span class="number">1</span>];</div><div class="line">                arr[i + <span class="number">1</span>] = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>现在，这个排序算法已经很好了，但是还可以继续优化,如果我们遇到仅需要一次排序就可以完成的数组，如:{9，5，6，7，8}，我们可以通过加入if和boolean来升级当前排序：</p>
+</blockquote>
+<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果:"></a>最终效果:</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">int[] arr = &#123; <span class="number">9</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span> &#125;;</div><div class="line">    boolean b = <span class="literal">true</span>;</div><div class="line">        </div><div class="line">    <span class="keyword">for</span> (int j = <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span>; j++) &#123;</div><div class="line">        b = <span class="literal">false</span>;</div><div class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span> - j; i++) &#123;</div><div class="line">            <span class="keyword">if</span> (arr[i] &gt; arr[i + <span class="number">1</span>]) &#123;</div><div class="line">                int temp = arr[i];</div><div class="line">                arr[i] = arr[i + <span class="number">1</span>];</div><div class="line">                arr[i + <span class="number">1</span>] = temp;</div><div class="line">                b = <span class="literal">true</span>;</div><div class="line">                System.out.println(Arrays.toString(arr));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(b == <span class="literal">false</span>) <span class="keyword">break</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>最简单的排序算法,但是很实用</strong>!!!</p>
+</blockquote>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;&lt;em&gt;在给定的一个数据中，我们有时候需要将数据对象进行某种顺序排列，常见的排列方式为升序或是降序，冒泡算法是处理这类排序的经典方法&lt;/em&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;给定一个数组&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;int[] arr = &amp;#123;&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;要将这个降序数组重排为升序数组，我们可以通过：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;将9和8进行比较，较大者和较小者换位–&amp;gt;{8,9,7,6,5}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;将9和7进行比较，较大者和较小者换位–&amp;gt;{8,7,9,6,5}&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;…&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;最终得到{8,7,6,5,9}
     
     </summary>
     
+      <category term="ALGORITHMS" scheme="http://yoursite.com/categories/ALGORITHMS/"/>
+    
+    
+      <category term="Algorithms" scheme="http://yoursite.com/tags/Algorithms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用容器（Collection）实现类总结（零）</title>
+    <link href="http://yoursite.com/2017/05/06/%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E6%80%BB%E7%BB%93_one/"/>
+    <id>http://yoursite.com/2017/05/06/常用容器总结_one/</id>
+    <published>2017-05-06T08:49:33.558Z</published>
+    <updated>2017-05-06T09:19:58.476Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>容器（Collection） 层次结构中的根（root）接口。Collection 表示一组对象，这些对象也称为 collection 的元素。一些 collection 允许有重复的元素，而另一些则不允许。一些 collection 是有序的，而另一些则是无序的。JDK 不提供此接口的任何直接 实现：它提供更具体的子接口（如 Set 和 List）实现。此接口通常用来传递 collection，并在需要最大普遍性的地方操作这些 collection。</em></p>
+<p>（The root interface in the collection hierarchy. A collection represents a group of objects, known as its elements. Some collections allow duplicate elements and others do not. Some are ordered and others unordered. The JDK does not provide any direct implementations of this interface: it provides implementations of more specific subinterfaces like Set and List. This interface is typically used to pass collections around and manipulate them where maximum generality is desired.）<br><a id="more"></a></p>
+<p><img src="1.jpg" alt="loading~~~"></p>
+<blockquote>
+<p>其中，常用的具体类有：</p>
+</blockquote>
+<ul>
+<li><p>ArrayList：底层实现为数组（Array），可以重复放置元素，且为线性排列。优点是查找方便，缺点是增、删速率低。</p>
+</li>
+<li><p>LinkedList：底层实现为链表（Link list），优点是删除和添加的效率很高，但随机访问元素时效率较ArrayList类低。</p>
+</li>
+<li><p>HashMap：通过键值对（Key—Value）映射的数据结构（类似于字典的用法），且Key有且唯一，但是一个Key可以一对多个Value，细节后续讨论。优点是可以通过Key快速查找并操作相关数据，很方便。</p>
+</li>
+<li><p>HashSet：不允许重复的对象传入，且不能保证传入数据能够有序迭代（ It makes no guarantees as to the iteration order of the set）。优点是HashSet利用Hash函数进行了查询效率上的优化。</p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;容器（Collection） 层次结构中的根（root）接口。Collection 表示一组对象，这些对象也称为 collection 的元素。一些 collection 允许有重复的元素，而另一些则不允许。一些 collection 是有序的，而另一些则是无序的。JDK 不提供此接口的任何直接 实现：它提供更具体的子接口（如 Set 和 List）实现。此接口通常用来传递 collection，并在需要最大普遍性的地方操作这些 collection。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;（The root interface in the collection hierarchy. A collection represents a group of objects, known as its elements. Some collections allow duplicate elements and others do not. Some are ordered and others unordered. The JDK does not provide any direct implementations of this interface: it provides implementations of more specific subinterfaces like Set and List. This interface is typically used to pass collections around and manipulate them where maximum generality is desired.）&lt;br&gt;
+    
+    </summary>
+    
+      <category term="DATA STRUCTURES" scheme="http://yoursite.com/categories/DATA-STRUCTURES/"/>
+    
+    
+      <category term="Data Structures" scheme="http://yoursite.com/tags/Data-Structures/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>迭代器小结</title>
+    <link href="http://yoursite.com/2017/05/06/%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%B0%8F%E7%BB%93/"/>
+    <id>http://yoursite.com/2017/05/06/迭代器小结/</id>
+    <published>2017-05-06T07:11:01.697Z</published>
+    <updated>2017-05-06T08:24:25.574Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="为什么使用迭代器"><a href="#为什么使用迭代器" class="headerlink" title="为什么使用迭代器?"></a>为什么使用迭代器?</h2><ul>
+<li>数组的遍历，可以通过for循环来实现，其原因是数组对于数据的储存是有序的(order)；但是，对于Set这种无序(no order)              的数据结构，就无法通过for循环来实现，此时，我们就需要引入一种新的访问方式来实现对数据的操作——迭代器。<a id="more"></a>
+</li>
+</ul>
+<p>迭代器是一种轻量级的对象操作，其接口有四个抽象方法：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public interface Iterator&lt;E&gt; &#123;</div><div class="line"></div><div class="line">    boolean hasNext();</div><div class="line">    E <span class="keyword">next</span>();</div><div class="line">    default void remove() &#123;</div><div class="line">        throw new UnsupportedOperationException(<span class="string">"remove"</span>);</div><div class="line">    &#125;</div><div class="line">    default void forEachRemaining(Consumer&lt;? <span class="keyword">super</span> E&gt; action) &#123;</div><div class="line">        Objects.requireNonNull(action);</div><div class="line">        <span class="keyword">while</span> (hasNext())</div><div class="line">        action.accept(<span class="keyword">next</span>());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>方法简介:</p>
+</blockquote>
+<p>–Object next()：返回集合里下一个元素。</p>
+<p>–boolean hasNext()：如果被迭代的集合还元素没有被遍历，则返回true。</p>
+<p>–void remove() ：删除集合里上一次next方法返回的元素</p>
+<p>–void forEachRemaining(Consumer action)，这是Java 8为Iterator新增的默认方法，该方法可使用Lambda表达式来遍历集合元素。</p>
+<blockquote>
+<p>迭代器的内部简单实现：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">SimpleIter</span> &#123;</span></div><div class="line">        private int size =elem.length;</div><div class="line">        private int coursor=-<span class="number">1</span>;      <span class="regexp">//</span>由实现的方法可知，游标在开始遍历List的时候从下标【<span class="number">0</span>】开始，所以初始值赋予-<span class="number">1</span></div><div class="line">    </div><div class="line">    public int size()&#123;</div><div class="line">        <span class="keyword">return</span> this.size;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public boolean hasNext()&#123;</div><div class="line">        <span class="keyword">return</span> coursor+<span class="number">1</span>&lt;size;       <span class="regexp">//</span>为了防止下标越界，所以coursor+<span class="number">1</span>小于List长度</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public String <span class="keyword">next</span>()&#123;</div><div class="line">        coursor++;</div><div class="line">        <span class="keyword">return</span> elem[coursor];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void remove()&#123;</div><div class="line">        System.arraycopy(elem, coursor+<span class="number">1</span>, elem, coursor,this.size-(coursor+<span class="number">1</span>)); </div><div class="line">        this.size--;</div><div class="line">        this.coursor--;              <span class="regexp">//</span>为了使游标可以指向删除某元素之后的正确指向，每次删除元素，需要coursor-<span class="number">1</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;为什么使用迭代器&quot;&gt;&lt;a href=&quot;#为什么使用迭代器&quot; class=&quot;headerlink&quot; title=&quot;为什么使用迭代器?&quot;&gt;&lt;/a&gt;为什么使用迭代器?&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;数组的遍历，可以通过for循环来实现，其原因是数组对于数据的储存是有序的(order)；但是，对于Set这种无序(no order)              的数据结构，就无法通过for循环来实现，此时，我们就需要引入一种新的访问方式来实现对数据的操作——迭代器。
+    
+    </summary>
+    
+      <category term="JAVA" scheme="http://yoursite.com/categories/JAVA/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
     
   </entry>
   

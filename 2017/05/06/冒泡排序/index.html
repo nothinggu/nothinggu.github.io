@@ -3,7 +3,7 @@
 
 
 
-<html class="theme-next mist" lang="zh-Hans">
+<html class="theme-next pisces" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Algorithms," />
 
 
 
@@ -88,16 +88,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="在给定的一个数据中，我们有时候需要将数据对象进行某种顺序排列，常见的排列方式为升序或是降序，冒泡算法是处理这类排序的经典方法。  给定一个数组  1int[] arr = &amp;#123;9,8,7,6,5&amp;#125;;  要将这个降序数组重排为升序数组，我们可以通过：   将9和8进行比较，较大者和较小者换位–&amp;gt;{8,9,7,6,5}  将9和7进行比较，较大者和较小者换位–&amp;gt;{8,7,">
+<meta name="keywords" content="Algorithms">
 <meta property="og:type" content="article">
-<meta property="og:title" content="article">
-<meta property="og:url" content="http://yoursite.com/2017/05/05/article/index.html">
+<meta property="og:title" content="冒泡算法的逻辑分析">
+<meta property="og:url" content="http://yoursite.com/2017/05/06/冒泡排序/index.html">
 <meta property="og:site_name" content="I&#39;m NOthing">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-05-05T12:44:23.758Z">
+<meta property="og:description" content="在给定的一个数据中，我们有时候需要将数据对象进行某种顺序排列，常见的排列方式为升序或是降序，冒泡算法是处理这类排序的经典方法。  给定一个数组  1int[] arr = &amp;#123;9,8,7,6,5&amp;#125;;  要将这个降序数组重排为升序数组，我们可以通过：   将9和8进行比较，较大者和较小者换位–&amp;gt;{8,9,7,6,5}  将9和7进行比较，较大者和较小者换位–&amp;gt;{8,7,">
+<meta property="og:updated_time" content="2017-05-06T09:07:08.773Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="article">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="冒泡算法的逻辑分析">
+<meta name="twitter:description" content="在给定的一个数据中，我们有时候需要将数据对象进行某种顺序排列，常见的排列方式为升序或是降序，冒泡算法是处理这类排序的经典方法。  给定一个数组  1int[] arr = &amp;#123;9,8,7,6,5&amp;#125;;  要将这个降序数组重排为升序数组，我们可以通过：   将9和8进行比较，较大者和较小者换位–&amp;gt;{8,9,7,6,5}  将9和7进行比较，较大者和较小者换位–&amp;gt;{8,7,">
 
 
 
@@ -105,7 +106,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
     fancybox: true,
     motion: false,
@@ -125,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/05/article/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/06/冒泡排序/"/>
 
 
 
 
 
-  <title>article | I'm NOthing</title>
+  <title>冒泡算法的逻辑分析 | I'm NOthing</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -303,7 +304,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/05/article/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/冒泡排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Allen Gu">
@@ -320,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">article</h1>
+          <h1 class="post-title" itemprop="name headline">冒泡算法的逻辑分析</h1>
         
 
         <div class="post-meta">
@@ -332,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T20:44:11+08:00">
-                2017-05-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T17:06:41+08:00">
+                2017-05-06
               </time>
             
 
@@ -343,6 +344,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ALGORITHMS/" itemprop="url" rel="index">
+                    <span itemprop="name">ALGORITHMS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -351,9 +374,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/05/article/#comments" itemprop="discussionUrl">
+                <a href="/2017/05/06/冒泡排序/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/05/article/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/05/06/冒泡排序/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -361,7 +384,7 @@
 
           
           
-             <span id="/2017/05/05/article/" class="leancloud_visitors" data-flag-title="article">
+             <span id="/2017/05/06/冒泡排序/" class="leancloud_visitors" data-flag-title="冒泡算法的逻辑分析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -389,15 +412,41 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p><em>在给定的一个数据中，我们有时候需要将数据对象进行某种顺序排列，常见的排列方式为升序或是降序，冒泡算法是处理这类排序的经典方法</em>。</p>
+<blockquote>
+<p>给定一个数组</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int[] arr = &#123;<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">5</span>&#125;;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>要将这个降序数组重排为升序数组，我们可以通过：</p>
+</blockquote>
+<ul>
+<li><p>将9和8进行比较，较大者和较小者换位–&gt;{8,9,7,6,5}</p>
+</li>
+<li><p>将9和7进行比较，较大者和较小者换位–&gt;{8,7,9,6,5}</p>
+</li>
+</ul>
+<p>…</p>
+<ul>
+<li>最终得到{8,7,6,5,9}<a id="more"></a>
+</li>
+</ul>
+<h2 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现:"></a>基本实现:</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">int[] arr = &#123; <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span> &#125;;</div><div class="line">        </div><div class="line">    <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (arr[i] &gt; arr[i + <span class="number">1</span>]) &#123;</div><div class="line">            int temp = arr[i];</div><div class="line">            arr[i] = arr[i + <span class="number">1</span>];</div><div class="line">            arr[i + <span class="number">1</span>] = temp;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>之后，需要开始第二轮的排序，自然想到使用嵌套for循环来实现：</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">int[] arr = &#123; <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span> &#125;;</div><div class="line">        </div><div class="line">    <span class="keyword">for</span> (int j = <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span>; j++) &#123;</div><div class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</div><div class="line">            <span class="keyword">if</span> (arr[i] &gt; arr[i + <span class="number">1</span>]) &#123;</div><div class="line">                int temp = arr[i];</div><div class="line">                arr[i] = arr[i + <span class="number">1</span>];</div><div class="line">                arr[i + <span class="number">1</span>] = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>这时，我们会发现在遍历过程中，每一次遍历都会增加一次不必要的重复比较，具体逻辑分析过程可以列举每一次的两个数字比较发现。因此在第二次for循环中，随着遍历的递进，都需要减少1次arr.length,实际上可以在内部for循环中将循环条件改为arr.length-1 —&gt;  arr.length-(1+j):</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">int[] arr = &#123; <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span> &#125;;</div><div class="line">        </div><div class="line">    <span class="keyword">for</span> (int j = <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span>; j++) &#123;</div><div class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; arr.length - (<span class="number">1</span> + j); i++) &#123;</div><div class="line">           <span class="keyword">if</span> (arr[i] &gt; arr[i + <span class="number">1</span>]) &#123;</div><div class="line">                int temp = arr[i];</div><div class="line">                arr[i] = arr[i + <span class="number">1</span>];</div><div class="line">                arr[i + <span class="number">1</span>] = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>现在，这个排序算法已经很好了，但是还可以继续优化,如果我们遇到仅需要一次排序就可以完成的数组，如:{9，5，6，7，8}，我们可以通过加入if和boolean来升级当前排序：</p>
+</blockquote>
+<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果:"></a>最终效果:</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">int[] arr = &#123; <span class="number">9</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span> &#125;;</div><div class="line">    boolean b = <span class="literal">true</span>;</div><div class="line">        </div><div class="line">    <span class="keyword">for</span> (int j = <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span>; j++) &#123;</div><div class="line">        b = <span class="literal">false</span>;</div><div class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span> - j; i++) &#123;</div><div class="line">            <span class="keyword">if</span> (arr[i] &gt; arr[i + <span class="number">1</span>]) &#123;</div><div class="line">                int temp = arr[i];</div><div class="line">                arr[i] = arr[i + <span class="number">1</span>];</div><div class="line">                arr[i + <span class="number">1</span>] = temp;</div><div class="line">                b = <span class="literal">true</span>;</div><div class="line">                System.out.println(Arrays.toString(arr));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(b == <span class="literal">false</span>) <span class="keyword">break</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>最简单的排序算法,但是很实用</strong>!!!</p>
+</blockquote>
 
       
     </div>
@@ -435,6 +484,12 @@
     
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithms/" rel="tag"># Algorithms</a>
+          
+        </div>
+      
 
       
         
@@ -444,8 +499,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/05/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/05/06/常用容器总结_one/" rel="next" title="常用容器（Collection）实现类总结（零）">
+                <i class="fa fa-chevron-left"></i> 常用容器（Collection）实现类总结（零）
               </a>
             
           </div>
@@ -453,6 +508,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/06/常用容器总结_two/" rel="prev" title="常用容器（Collection）实现类总结（一）——ArrayList">
+                常用容器（Collection）实现类总结（一）——ArrayList <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -531,14 +590,32 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -608,7 +685,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本实现"><span class="nav-number">1.</span> <span class="nav-text">基本实现:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最终效果"><span class="nav-number">2.</span> <span class="nav-text">最终效果:</span></a></li></ol></div>
             
 
           </div>
@@ -646,7 +723,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
@@ -733,6 +810,13 @@
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
@@ -758,9 +842,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/05/05/article/';
-          this.page.identifier = '2017/05/05/article/';
-          this.page.title = 'article';
+          this.page.url = 'http://yoursite.com/2017/05/06/冒泡排序/';
+          this.page.identifier = '2017/05/06/冒泡排序/';
+          this.page.title = '冒泡算法的逻辑分析';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://G.disqus.com/embed.js';
