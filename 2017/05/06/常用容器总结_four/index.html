@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Data Structures," />
 
 
 
@@ -88,15 +88,20 @@
 
 
 
-<meta name="description" content="STAY HUNGRY!STAY FOOLISH!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="I&#39;m NOthing">
-<meta property="og:url" content="http://yoursite.com/tags/Algorithms/index.html">
+<meta name="description" content="基于哈希表的 Map 接口的实现。此实现提供所有可选的映射操作，并允许使用 null 值和 null 键。（除了非同步和允许使用 null 之外，HashMap 类与 Hashtable 大致相同。）此类不保证映射的顺序，特别是它不保证该顺序恒久不变。 (Hash table based implementation of the Map interface. This implementatio">
+<meta name="keywords" content="Data Structures">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用容器（Collection）实现类总结（三）——HashMap">
+<meta property="og:url" content="http://yoursite.com/2017/05/06/常用容器总结_four/index.html">
 <meta property="og:site_name" content="I&#39;m NOthing">
-<meta property="og:description" content="STAY HUNGRY!STAY FOOLISH!">
+<meta property="og:description" content="基于哈希表的 Map 接口的实现。此实现提供所有可选的映射操作，并允许使用 null 值和 null 键。（除了非同步和允许使用 null 之外，HashMap 类与 Hashtable 大致相同。）此类不保证映射的顺序，特别是它不保证该顺序恒久不变。 (Hash table based implementation of the Map interface. This implementatio">
+<meta property="og:image" content="http://yoursite.com/2017/05/06/常用容器总结_four/1.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/06/常用容器总结_four/2.jpg">
+<meta property="og:updated_time" content="2017-05-06T11:14:23.505Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="I&#39;m NOthing">
-<meta name="twitter:description" content="STAY HUNGRY!STAY FOOLISH!">
+<meta name="twitter:title" content="常用容器（Collection）实现类总结（三）——HashMap">
+<meta name="twitter:description" content="基于哈希表的 Map 接口的实现。此实现提供所有可选的映射操作，并允许使用 null 值和 null 键。（除了非同步和允许使用 null 之外，HashMap 类与 Hashtable 大致相同。）此类不保证映射的顺序，特别是它不保证该顺序恒久不变。 (Hash table based implementation of the Map interface. This implementatio">
+<meta name="twitter:image" content="http://yoursite.com/2017/05/06/常用容器总结_four/1.png">
 
 
 
@@ -124,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Algorithms/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/06/常用容器总结_four/"/>
 
 
 
 
 
-  <title>标签: Algorithms | I'm NOthing</title>
+  <title>常用容器（Collection）实现类总结（三）——HashMap | I'm NOthing</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -174,7 +179,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -292,44 +297,244 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>Algorithms<small>标签</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/常用容器总结_four/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Allen Gu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/pic2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I'm NOthing">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">常用容器（Collection）实现类总结（三）——HashMap</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T17:55:30+08:00">
+                2017-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/DATA-STRUCTURES/" itemprop="url" rel="index">
+                    <span itemprop="name">DATA STRUCTURES</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/06/常用容器总结_four/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/05/06/常用容器总结_four/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/05/06/常用容器总结_four/" class="leancloud_visitors" data-flag-title="常用容器（Collection）实现类总结（三）——HashMap">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p><em>基于哈希表的 Map 接口的实现。此实现提供所有可选的映射操作，并允许使用 null 值和 null 键。（除了非同步和允许使用 null 之外，HashMap 类与 Hashtable 大致相同。）此类不保证映射的顺序，特别是它不保证该顺序恒久不变。</em></p>
+<p>(Hash table based implementation of the Map interface. This implementation provides all of the optional map operations, and permits null values and the null key. (The HashMap class is roughly equivalent to Hashtable, except that it is unsynchronized and permits nulls.) This class makes no guarantees as to the order of the map; in particular, it does not guarantee that the order will remain constant over time.  )</p>
+<p><em>此实现假定哈希函数将元素适当地分布在各桶(buckets)之间，可为基本操作（get 和 put）提供稳定的性能。迭代 collection 视图所需的时间与 HashMap 实例的“容量”（桶的数量）及其大小（键-值映射关系数）成比例。所以，如果迭代性能很重要，则不要将初始容量设置得太高（或将加载因子设置得太低）。</em> </p>
+<p>(This implementation provides constant-time performance for the basic operations (get and put), assuming the hash function disperses the elements properly among the buckets. Iteration over collection views requires time proportional to the “capacity” of the HashMap instance (the number of buckets) plus its size (the number of key-value mappings). Thus, it’s very important not to set the initial capacity too high (or the load factor too low) if iteration performance is important. )</p>
+<a id="more"></a>
+<h3 id="HashMap的优、缺点分析"><a href="#HashMap的优、缺点分析" class="headerlink" title="HashMap的优、缺点分析"></a>HashMap的优、缺点分析</h3><p>优点：</p>
+<ul>
+<li>通过键值对(key-value)而构成一对一（也可以是一对多）的映射关系，方便数据的查询</li>
+<li>由于HashMap只允许唯一键的存在，所以查询速度较快</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>映射无序，且不保证顺序恒定</li>
+</ul>
+<h3 id="HashMap基本实现"><a href="#HashMap基本实现" class="headerlink" title="HashMap基本实现"></a>HashMap基本实现</h3><blockquote>
+<p>Entry类的实现：</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Entry</span> &#123;</span></div><div class="line">    Object key;</div><div class="line">    Object value;</div><div class="line">    </div><div class="line">    public Entry() &#123;&#125;</div><div class="line">    </div><div class="line">    public Entry(Object key, Object value) &#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        this.key = key;</div><div class="line">        this.value = value;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>HashMap操作的是键值对,需要一个Entry类来实现</p>
+<blockquote>
+<p>MyHashMap类的简单实现：</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line">public class MyHashMap &#123;</div><div class="line">    Entry[] arr = new Entry[100];</div><div class="line">    int size;</div><div class="line">    </div><div class="line">    public void put(Object key, Object value) &#123;</div><div class="line">        Entry e = new Entry(key, value);</div><div class="line">        for(int i = 0;i &lt; size; i++) &#123;</div><div class="line">            if(arr[i].key.equals(key)) &#123;</div><div class="line">                arr[i].value = value;</div><div class="line">                return ;</div><div class="line">            &#125;</div><div class="line">        &#125;                            //由于HashMap只允许存在唯一键,重复的键值对会被新值覆盖,所以引入这段代码</div><div class="line">        arr[size++] = e;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public Object get(Object key) &#123;</div><div class="line">        for(int i = 0;i &lt; size; i++) &#123;</div><div class="line">            if(arr[i].key.equals(key)) &#123;</div><div class="line">                return arr[i].value;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return null;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void remove(Object key) &#123;</div><div class="line">        for(int i = 0;i &lt; size; i++) &#123;</div><div class="line">            if(arr[i].key.equals(key)) &#123;</div><div class="line">                arr[i].value = null;</div><div class="line">                size--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public boolean containsKey(Object key) &#123;</div><div class="line">        for(int i = 0;i &lt; size; i++) &#123;</div><div class="line">            if(arr[i].key.equals(key)) &#123;</div><div class="line">                return true;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public boolean containsValue(Object value) &#123;</div><div class="line">        for(int i = 0;i &lt; size; i++) &#123;</div><div class="line">            if(arr[i].value.equals(value)) &#123;</div><div class="line">                return true;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public int getSize() &#123;</div><div class="line">        return size;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void setSize(int size) &#123;</div><div class="line">        this.size = size;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>显然,基本实现HashMap的方法效率低下,需要改进</p>
+<h3 id="HashMap改进版"><a href="#HashMap改进版" class="headerlink" title="HashMap改进版"></a>HashMap改进版</h3><p>实际上,HashMap的底层实现是通过Array和LinkedList共同实现的,所以HashMap综合了两者的优点,实现的关键在于利用hashcode:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//存储时:</div><div class="line">int hash = key.hashCode();</div><div class="line">int index = hash % Entry[].length;</div><div class="line">Entry[index] = value;</div><div class="line"></div><div class="line">//取值时:</div><div class="line">int hash = key.hashCode();</div><div class="line">int index = hash % Entry[].length;</div><div class="line">return Entry[index];</div></pre></td></tr></table></figure>
+<blockquote>
+<p>HashMap实现的图片说明:</p>
+</blockquote>
+<p><img src="1.png" alt="loading~~~"></p>
+<p><img src="2.jpg" alt="loading~~~"></p>
+<blockquote>
+<p>Entry类的升级:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Entry</span>&lt;K,<span class="title">V</span>&gt;&#123;</span></div><div class="line">    final K key;</div><div class="line">    V value;</div><div class="line">    Entry&lt;K,V&gt; <span class="keyword">next</span>;<span class="regexp">//</span>下一个结点</div><div class="line"> </div><div class="line">    public Entry(K key, V value, Entry&lt;K, V&gt; <span class="keyword">next</span>) &#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        this.key = key;</div><div class="line">        this.value = value;</div><div class="line">        this.<span class="keyword">next</span> = <span class="keyword">next</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public final K getKey() &#123;</div><div class="line">        <span class="keyword">return</span> key;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public final V getValue() &#123;</div><div class="line">        <span class="keyword">return</span> value;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public final V setValue(V newValue) &#123;</div><div class="line">    V oldValue = value;</div><div class="line">        value = newValue;</div><div class="line">        <span class="keyword">return</span> oldValue;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>MyHashMap类的实现:</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">public class MyHashMap&lt;K, V&gt; &#123;</div><div class="line">    private Entry[] table;</div><div class="line">    static final int DEFAULT_INITIAL_CAPACITY = 16;//默认数组长度</div><div class="line">    private int size;</div><div class="line"></div><div class="line">    public Hash() &#123;</div><div class="line">        table = new Entry[DEFAULT_INITIAL_CAPACITY];</div><div class="line">        size = DEFAULT_INITIAL_CAPACITY;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public int getSize() &#123;</div><div class="line">        return size;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    // 求index</div><div class="line">    static int indexFor(int h, int length) &#123;</div><div class="line">        return h % (length - 1);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //获取value</div><div class="line">    public V get(Object key) &#123;</div><div class="line">        if (key == null)</div><div class="line">            return null;</div><div class="line">        int hash = key.hashCode();</div><div class="line">        int index = indexFor(hash, table.length);// 求key在数组中的下标</div><div class="line">        for (Entry&lt;K, V&gt; e = table[index]; e != null; e = e.next) &#123;</div><div class="line">            Object k = e.key;</div><div class="line">            if (e.key.hashCode() == hash &amp;&amp; (k == key || key.equals(k)))</div><div class="line">                return e.value;</div><div class="line">        &#125;</div><div class="line">        return null;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public V put(K key, V value) &#123;</div><div class="line">        if (key == null)</div><div class="line">            return null;</div><div class="line">        int hash = key.hashCode();</div><div class="line">        int index = indexFor(hash, table.length);</div><div class="line"></div><div class="line">        for (Entry&lt;K, V&gt; e = table[index]; e != null; e = e.next) &#123;</div><div class="line">            Object k = e.key;</div><div class="line">            if (e.key.hashCode() == hash &amp;&amp; (k == key || key.equals(k))) &#123;</div><div class="line">                V oldValue = e.value;</div><div class="line">                e.value = value;</div><div class="line">                return oldValue;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        // 如果key值不存在，那么需要添加</div><div class="line">        Entry&lt;K, V&gt; e = table[index];// 获取当前数组中的e</div><div class="line">        table[index] = new Entry&lt;K, V&gt;(key, value, e);// 新建一个Entry，并将其指向原先的e</div><div class="line">        return null;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/05/06/冒泡排序/" itemprop="url">
-              
-                <span itemprop="name">冒泡算法的逻辑分析</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-06T17:06:41+08:00"
-              content="2017-05-06" >
-          05-06
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------本文结束<i class="fa fa-paw"></i>感谢阅读------</div>
+    
+</div>
+      
+    </div>
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Data-Structures/" rel="tag"># Data Structures</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/06/常用容器总结-three/" rel="next" title="常用容器（Collection）实现类总结（二）——LinkedList">
+                <i class="fa fa-chevron-left"></i> 常用容器（Collection）实现类总结（二）——LinkedList
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/06/常用容器总结-five/" rel="prev" title="常用容器（Collection）实现类总结（四）——HashSet">
+                常用容器（Collection）实现类总结（四）——HashSet <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -337,6 +542,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -356,8 +572,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/pic2.jpg"
@@ -457,6 +682,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap的优、缺点分析"><span class="nav-number">1.</span> <span class="nav-text">HashMap的优、缺点分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap基本实现"><span class="nav-number">2.</span> <span class="nav-text">HashMap基本实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap改进版"><span class="nav-number">3.</span> <span class="nav-text">HashMap改进版</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -577,6 +818,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
@@ -594,6 +839,18 @@
       <script id="dsq-count-scr" src="https://G.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/05/06/常用容器总结_four/';
+          this.page.identifier = '2017/05/06/常用容器总结_four/';
+          this.page.title = '常用容器（Collection）实现类总结（三）——HashMap';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://G.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   

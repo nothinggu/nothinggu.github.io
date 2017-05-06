@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-06T09:37:32.700Z</updated>
+  <updated>2017-05-06T10:42:45.928Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,404 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/05/06/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+    <id>http://yoursite.com/2017/05/06/异常处理/</id>
+    <published>2017-05-06T10:42:45.928Z</published>
+    <updated>2017-05-06T10:42:45.928Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>内部类总结</title>
+    <link href="http://yoursite.com/2017/05/06/%E5%86%85%E9%83%A8%E7%B1%BB%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2017/05/06/内部类总结/</id>
+    <published>2017-05-06T10:32:23.239Z</published>
+    <updated>2017-05-06T11:11:41.010Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>内部类</strong>是java中比较复杂的内容,接下来进行一些细节总结:</p>
+<blockquote>
+<p>内部类(inner class)是定义在一个类中的类,这种技巧有什么好处呢?</p>
+</blockquote>
+<ul>
+<li>内部类可以访问外部类中的数据,包括私有数据</li>
+<li>内部类对于包中其它类来说是隐藏的</li>
+<li>当想要定义一个<em>回调(callback)函数</em>时,可以使用匿名内部类,这样更为便捷<br>　　(回调函数:可以指出一个特定事件发生时应该采取的动作.例如在按下鼠标或选择某个菜单时应该采取什么行动)<a id="more"></a>
+</li>
+</ul>
+<h3 id="使用内部类访问对象状态"><a href="#使用内部类访问对象状态" class="headerlink" title="使用内部类访问对象状态"></a>使用内部类访问对象状态</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">TalkingClock</span></span></div><div class="line">&#123;</div><div class="line">    private int interval;</div><div class="line">    private boolean beep;</div><div class="line"></div><div class="line">    public TalkingClock(int interval, boolean beep) &#123; . . . &#125;</div><div class="line">    public void start() &#123; . . . &#125;</div><div class="line"></div><div class="line">    public <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="title">implements</span> <span class="title">ActionListener</span> //内部类</span></div><div class="line"></div><div class="line">    &#123;</div><div class="line">        . . .</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>内部类的详细代码:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="title">implements</span> <span class="title">ActionListener</span></span></div><div class="line">&#123;</div><div class="line">    public void actionPerformed(ActionEvent event)</div><div class="line">    &#123;</div><div class="line">        System.out.println(<span class="string">"At the tone, the time is "</span> + new Date());</div><div class="line">        <span class="keyword">if</span> (beep) Toolkit.getDefaultToolkit().beep();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以发现,在内部类中的beep是外部类中的变量,这样的引用是如何做到的呢?</p>
+<p>事实上,是通过这样一种方式调用的:   </p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (outer.beep) Toolkit.getDefaultToolkit().beep();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>但是,outer并不是java中的关键字,可以看到,内部类并没有构造器,所以编译器隐式地给内部类了一个构造器:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">public TimePrinter(TalkingClock clock)</div><div class="line">&#123;</div><div class="line">    outer = clock;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="内部类的特殊语法规则"><a href="#内部类的特殊语法规则" class="headerlink" title="内部类的特殊语法规则"></a>内部类的特殊语法规则</h3><blockquote>
+<p>内部类对外部类引用的语法还要复杂一点:outerclass.this表示外部类数据的引用,如:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="title">implements</span> <span class="title">ActionListener</span></span></div><div class="line">&#123;</div><div class="line">    public void actionPerformed(ActionEvent event)</div><div class="line">    &#123;</div><div class="line">        System.out.println(<span class="string">"At the tone, the time is "</span> + new Date());</div><div class="line">        <span class="keyword">if</span> (outer.this.beep) Toolkit.getDefaultToolkit().beep();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>细节规则:</p>
+<ul>
+<li>内部类中所有的静态域都必须是final,因为对于一个外部类的实例,我们希望它都只有唯一一个内部类实例</li>
+<li>内部类不能有静态方法</li>
+</ul>
+<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3><blockquote>
+<p>如果内部类只在外部类的一个方法中调用了一次,我们可以采取使用局部内部类来简化代码:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public void start()</div><div class="line">&#123;</div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="title">implements</span> <span class="title">ActionListener</span></span></div><div class="line">    &#123;</div><div class="line">        public void actionPerformed(ActionEvent event)</div><div class="line">        &#123;</div><div class="line">            System.out.println(<span class="string">"At the tone, the time is "</span> + new Date());</div><div class="line">            <span class="keyword">if</span> (beep) Toolkit.getDefaultToolkit().beep();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    ActionListener listener = new TimePrinter();</div><div class="line">    Timer t = new Timer(interval, listener);</div><div class="line">    t.start();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>局部内部类不能用public和private来声明,它的作用域只限于在这个局部的块中<br>局部内部类的另一个优点是对外部世界完全隐蔽,即除了start()方法外,没有任何方法知道TimePrinter类</p>
+<p>细节规则:</p>
+</blockquote>
+<p>当局部内部类访问局部变量时,必须为final</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">int counter = <span class="number">0</span>;</div><div class="line">Date[] dates = new Date[<span class="number">100</span>];</div><div class="line"><span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; dates.length; i++)</div><div class="line">    dates[i] = new Date()</div><div class="line">        &#123;</div><div class="line">            public int compareTo(Date other)</div><div class="line">            &#123;</div><div class="line">                counter++; <span class="regexp">//</span>错误</div><div class="line">                <span class="keyword">return</span> <span class="keyword">super</span>.compareTo(other);</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">Arrays.sort(dates);</div><div class="line">System.out.println(counter + <span class="string">" comparisons."</span>);</div></pre></td></tr></table></figure>
+<h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public void start(int interval, boolean beep)</div><div class="line">&#123;</div><div class="line">    ActionListener listener = new ActionListener()</div><div class="line">    &#123;</div><div class="line">        public void actionPerformed(ActionEvent event)</div><div class="line">        &#123;</div><div class="line">            System.out.println(<span class="string">"At the tone, the time is "</span> + new Date());</div><div class="line">            <span class="keyword">if</span> (beep) Toolkit.getDefaultToolkit().beep();</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    Timer t = new Timer(interval, listener);</div><div class="line">    t.start();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>细节规则:</p>
+</blockquote>
+<p>由于构造器的名字必须与类相同,但是匿名内部类没有名字,所以匿名内部类没有构造器</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;内部类&lt;/strong&gt;是java中比较复杂的内容,接下来进行一些细节总结:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;内部类(inner class)是定义在一个类中的类,这种技巧有什么好处呢?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;内部类可以访问外部类中的数据,包括私有数据&lt;/li&gt;
+&lt;li&gt;内部类对于包中其它类来说是隐藏的&lt;/li&gt;
+&lt;li&gt;当想要定义一个&lt;em&gt;回调(callback)函数&lt;/em&gt;时,可以使用匿名内部类,这样更为便捷&lt;br&gt;　　(回调函数:可以指出一个特定事件发生时应该采取的动作.例如在按下鼠标或选择某个菜单时应该采取什么行动)
+    
+    </summary>
+    
+      <category term="JAVA" scheme="http://yoursite.com/categories/JAVA/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>类的设计技巧简单总结</title>
+    <link href="http://yoursite.com/2017/05/06/%E7%B1%BB%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%8A%80%E5%B7%A7%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2017/05/06/类的设计技巧简单总结/</id>
+    <published>2017-05-06T10:28:32.945Z</published>
+    <updated>2017-05-06T11:12:40.898Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>保证数据的私有性(private):</p>
+</blockquote>
+<p>为了实现一个类的良好封装性,一定不要使用其他的方式去声明成员变量,这是为了后期代码维护做的基本准备.</p>
+<blockquote>
+<p>对数据初始化:</p>
+</blockquote>
+<p>虽然编译器会自动对成员变量进行隐式初始化,但是为了可读性,应该为变量提供初始化或是利用构造器进行初始化(局部变量必须初始化).</p>
+<blockquote>
+<p>不要在类中使用过多的基本类型:</p>
+</blockquote>
+<p>意思是当类中存在多个基本数据类型时,用一个引用类型来包装这些基本类型,这样可以增强其可读性,且后期要替换这个类的名称也更简单.<br><a id="more"></a></p>
+<blockquote>
+<p>并非所有的域都需要getter/setter:</p>
+</blockquote>
+<p>例如:在一个Employee类中,雇员的薪水是可以有getter和setter的,但是雇员的雇佣日期就不应该有setter.</p>
+<blockquote>
+<p>一个类的功能尽量不要太繁杂:</p>
+</blockquote>
+<p>如果一个类的某些功能明显的可以分为两类,就应该将其分解.</p>
+<blockquote>
+<p>类名/方法名的名称要可以体现其职责</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;保证数据的私有性(private):&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;为了实现一个类的良好封装性,一定不要使用其他的方式去声明成员变量,这是为了后期代码维护做的基本准备.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;对数据初始化:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;虽然编译器会自动对成员变量进行隐式初始化,但是为了可读性,应该为变量提供初始化或是利用构造器进行初始化(局部变量必须初始化).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不要在类中使用过多的基本类型:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;意思是当类中存在多个基本数据类型时,用一个引用类型来包装这些基本类型,这样可以增强其可读性,且后期要替换这个类的名称也更简单.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="JAVA" scheme="http://yoursite.com/categories/JAVA/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用java写一个简单的文件拷贝程序吧</title>
+    <link href="http://yoursite.com/2017/05/06/%E7%94%A8java%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%87%E4%BB%B6%E6%8B%B7%E8%B4%9D%E7%A8%8B%E5%BA%8F%E5%90%A7/"/>
+    <id>http://yoursite.com/2017/05/06/用java写一个简单的文件拷贝程序吧/</id>
+    <published>2017-05-06T10:26:30.178Z</published>
+    <updated>2017-05-06T10:27:39.403Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>代码:</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">public static void copyFile(String srcPath, String destPath) throws IOException &#123;</div><div class="line">        //建立File对象的来源与目的</div><div class="line">        File src = new File(srcPath);</div><div class="line">        File dest = new File(destPath);</div><div class="line">        </div><div class="line">        //由于只能拷贝文件,所以判定输入流是否为文件</div><div class="line">        if(!src.isFile()) &#123;</div><div class="line">            System.out.println("只能拷贝文件!");</div><div class="line">            throw new IOException("只能拷贝文件!");</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        //文件输入输出</div><div class="line">        InputStream is = new FileInputStream(src);</div><div class="line">        OutputStream os = new FileOutputStream(dest);</div><div class="line">        </div><div class="line">        //读取文件大小,并循环写出文件</div><div class="line">        byte[] flush = new byte[1024];</div><div class="line">        int len = 0;</div><div class="line">        while(-1 != (len = is.read(flush))) &#123;</div><div class="line">            os.write(flush, 0, len);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        //刷新此输出流并强制写出所有缓冲的输出字节</div><div class="line">        os.flush();</div><div class="line">        </div><div class="line">        //释放资源(一般先打开的后关闭)</div><div class="line">        os.close();</div><div class="line">        is.close();</div><div class="line">        </div><div class="line">        System.out.println("拷贝成功!");</div><div class="line">    &#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;代码:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line
+    
+    </summary>
+    
+      <category term="JAVA" scheme="http://yoursite.com/categories/JAVA/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java中引用传递和值传递的理解</title>
+    <link href="http://yoursite.com/2017/05/06/java%E4%B8%AD%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%92%8C%E5%80%BC%E4%BC%A0%E9%80%92%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+    <id>http://yoursite.com/2017/05/06/java中引用传递和值传递的理解/</id>
+    <published>2017-05-06T10:14:51.329Z</published>
+    <updated>2017-05-06T11:13:17.344Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>按值调用(call by value):表示方法接收的是调用者提供的值<br>按引用调用(call by reference):表示方法接收的是调用者提供的地址</p>
+</blockquote>
+<p>一个方法可以修改<strong>引用传递</strong>所对应的变量值,而不能修改<strong>值传递</strong>调用所对应的变量值</p>
+<p><strong>对于java来说,是不存在引用传递的,它总是按值调用</strong></p>
+<p>如何理解?方法是得到所有参数值的一个拷贝,<em>方法无法修改传递给它的任何变量值的内容</em><br><a id="more"></a></p>
+<blockquote>
+<p>示例1:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public static void main(String[] args) &#123;</div><div class="line">        int temp = <span class="number">0</span>;</div><div class="line">        int x = <span class="number">10</span>;</div><div class="line">        int y = <span class="number">11</span>;</div><div class="line">        System.out.println(<span class="string">"before: "</span> + x + <span class="string">" "</span>+ y); <span class="regexp">//</span> x = <span class="number">10</span>, y = <span class="number">11</span></div><div class="line">        temp = y;</div><div class="line">        y = x;</div><div class="line">        x = temp;</div><div class="line">        System.out.println(<span class="string">"after: "</span> + x + <span class="string">" "</span>+ y);  <span class="regexp">//</span> x = <span class="number">11</span>, y = <span class="number">10</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>示例2:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public static void main(String[] args) &#123;</div><div class="line">        int temp = <span class="number">0</span>;</div><div class="line">        int x = <span class="number">10</span>;</div><div class="line">        int y = <span class="number">11</span>;</div><div class="line">        System.out.println(<span class="string">"before: "</span> + x + <span class="string">" "</span>+ y); <span class="regexp">//</span> x = <span class="number">10</span>, y = <span class="number">11</span></div><div class="line">        change(x, y);</div><div class="line">        System.out.println(<span class="string">"after: "</span> + x + <span class="string">" "</span>+ y);   <span class="regexp">//</span> x = <span class="number">10</span>, y = <span class="number">11</span> </div><div class="line">    &#125;</div><div class="line">    public static void change(int x, int y) &#123;</div><div class="line">        int temp = <span class="number">0</span>;</div><div class="line">        temp = y;</div><div class="line">        y = x;</div><div class="line">        x = temp;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>我们可以看到,一个方法不可以改变<strong>基本数据类型</strong>参数值,但可以通过引用类型来改变参数:</p>
+<blockquote>
+<p>示例3:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">public static void main(String[] args) &#123;</div><div class="line">        Test t1 = new Test(<span class="string">"James"</span>, <span class="number">15</span>);</div><div class="line">        </div><div class="line">        plus(t1);</div><div class="line">        </div><div class="line">        System.out.println(t1.age); <span class="regexp">//</span> 输出<span class="number">25</span></div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public static void plus(Test t)&#123;</div><div class="line">        t.age += <span class="number">10</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> &#123;</span></div><div class="line">    String name;</div><div class="line">    int age;</div><div class="line">    </div><div class="line">    public Test(String name, int age) &#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        this.name = name;</div><div class="line">        this.age = age;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>最后,我们来试验一下引用类型是否可以对象交换:</p>
+<blockquote>
+<p>示例4:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">public static void main(String[] args) &#123;</div><div class="line">        Test t1 = new Test(<span class="string">"James"</span>, <span class="number">15</span>);</div><div class="line">        Test t2 = new Test(<span class="string">"Alice"</span>, <span class="number">20</span>);</div><div class="line">        System.out.println(t1 + <span class="string">" "</span> + t2); <span class="regexp">//t</span>1 = test.Test@15db9742, t2 = test.Test@6d06d69c</div><div class="line">        swap(t1, t2);</div><div class="line">        System.out.println(t1 + <span class="string">" "</span> + t2);  <span class="regexp">//t</span>1 = test.Test@15db9742, t2 = test.Test@6d06d69c</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public static void swap(Test t1, Test t2) &#123;</div><div class="line">        Test temp = t1;</div><div class="line">        t2 = t1;</div><div class="line">        t1 = temp;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> &#123;</span></div><div class="line">    String name;</div><div class="line">    int age;</div><div class="line">    </div><div class="line">    public Test(String name, int age) &#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        this.name = name;</div><div class="line">        this.age = age;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public Integer plus(Integer age)&#123;</div><div class="line">        age += <span class="number">10</span>;</div><div class="line">        <span class="keyword">return</span> age;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>依旧是无法实现的</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;按值调用(call by value):表示方法接收的是调用者提供的值&lt;br&gt;按引用调用(call by reference):表示方法接收的是调用者提供的地址&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一个方法可以修改&lt;strong&gt;引用传递&lt;/strong&gt;所对应的变量值,而不能修改&lt;strong&gt;值传递&lt;/strong&gt;调用所对应的变量值&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;对于java来说,是不存在引用传递的,它总是按值调用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如何理解?方法是得到所有参数值的一个拷贝,&lt;em&gt;方法无法修改传递给它的任何变量值的内容&lt;/em&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="JAVA" scheme="http://yoursite.com/categories/JAVA/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用容器（Collection）实现类总结（四）——HashSet</title>
+    <link href="http://yoursite.com/2017/05/06/%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E6%80%BB%E7%BB%93-five/"/>
+    <id>http://yoursite.com/2017/05/06/常用容器总结-five/</id>
+    <published>2017-05-06T10:07:49.232Z</published>
+    <updated>2017-05-06T11:14:00.340Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>此类实现 Set 接口，由哈希表（实际上是一个 HashMap 实例）支持。它不保证 set 的迭代顺序；特别是它不保证该顺序恒久不变。此类允许使用 null 元素。</em></p>
+<p>(This class implements the Set interface, backed by a hash table (actually a HashMap instance). It makes no guarantees as to the iteration order of the set; in particular, it does not guarantee that the order will remain constant over time. This class permits the null element. )</p>
+<p><strong>(注意:HashSet必须重写hashcode和equals方法)</strong></p>
+<a id="more"></a>
+<h3 id="HashSet的优、缺点分析"><a href="#HashSet的优、缺点分析" class="headerlink" title="HashSet的优、缺点分析"></a>HashSet的优、缺点分析</h3><p>优点：</p>
+<ul>
+<li>不允许储存相同的对象(注意:HashSet使用成员对象来计算hashcode值，对于两个对象来说hashcode可能相同，所以equals()方法用来判断对象的相等性，如果两个对象不同的话，那么返回false)</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>相较HashMap速度慢(HashMap由唯一的Key来找Value)</li>
+</ul>
+<h3 id="方法分析"><a href="#方法分析" class="headerlink" title="方法分析"></a>方法分析</h3><blockquote>
+<p>HashSet的底层实现实际上是HashMap,主要分析其中一个方法add():</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public boolean add(E e) &#123;</div><div class="line">    <span class="keyword">return</span> map.put(e, PRESENT)==null;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可见,传入的形参e是作为map的Key,<strong>而HashSet的元素不可重复实际上就是利用了Map中Key的不可重复</strong></p>
+<blockquote>
+<p>再看看PRESENT是什么:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">private static final Object PRESENT = new Object();</div></pre></td></tr></table></figure>
+<p>定义一个虚拟的Object对象作为HashMap的value，将此对象定义为static final</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;此类实现 Set 接口，由哈希表（实际上是一个 HashMap 实例）支持。它不保证 set 的迭代顺序；特别是它不保证该顺序恒久不变。此类允许使用 null 元素。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;(This class implements the Set interface, backed by a hash table (actually a HashMap instance). It makes no guarantees as to the iteration order of the set; in particular, it does not guarantee that the order will remain constant over time. This class permits the null element. )&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(注意:HashSet必须重写hashcode和equals方法)&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="DATA STRUCTURES" scheme="http://yoursite.com/categories/DATA-STRUCTURES/"/>
+    
+    
+      <category term="Data Structures" scheme="http://yoursite.com/tags/Data-Structures/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用容器（Collection）实现类总结（三）——HashMap</title>
+    <link href="http://yoursite.com/2017/05/06/%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E6%80%BB%E7%BB%93_four/"/>
+    <id>http://yoursite.com/2017/05/06/常用容器总结_four/</id>
+    <published>2017-05-06T09:55:30.318Z</published>
+    <updated>2017-05-06T11:14:23.505Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>基于哈希表的 Map 接口的实现。此实现提供所有可选的映射操作，并允许使用 null 值和 null 键。（除了非同步和允许使用 null 之外，HashMap 类与 Hashtable 大致相同。）此类不保证映射的顺序，特别是它不保证该顺序恒久不变。</em></p>
+<p>(Hash table based implementation of the Map interface. This implementation provides all of the optional map operations, and permits null values and the null key. (The HashMap class is roughly equivalent to Hashtable, except that it is unsynchronized and permits nulls.) This class makes no guarantees as to the order of the map; in particular, it does not guarantee that the order will remain constant over time.  )</p>
+<p><em>此实现假定哈希函数将元素适当地分布在各桶(buckets)之间，可为基本操作（get 和 put）提供稳定的性能。迭代 collection 视图所需的时间与 HashMap 实例的“容量”（桶的数量）及其大小（键-值映射关系数）成比例。所以，如果迭代性能很重要，则不要将初始容量设置得太高（或将加载因子设置得太低）。</em> </p>
+<p>(This implementation provides constant-time performance for the basic operations (get and put), assuming the hash function disperses the elements properly among the buckets. Iteration over collection views requires time proportional to the “capacity” of the HashMap instance (the number of buckets) plus its size (the number of key-value mappings). Thus, it’s very important not to set the initial capacity too high (or the load factor too low) if iteration performance is important. )</p>
+<a id="more"></a>
+<h3 id="HashMap的优、缺点分析"><a href="#HashMap的优、缺点分析" class="headerlink" title="HashMap的优、缺点分析"></a>HashMap的优、缺点分析</h3><p>优点：</p>
+<ul>
+<li>通过键值对(key-value)而构成一对一（也可以是一对多）的映射关系，方便数据的查询</li>
+<li>由于HashMap只允许唯一键的存在，所以查询速度较快</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>映射无序，且不保证顺序恒定</li>
+</ul>
+<h3 id="HashMap基本实现"><a href="#HashMap基本实现" class="headerlink" title="HashMap基本实现"></a>HashMap基本实现</h3><blockquote>
+<p>Entry类的实现：</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Entry</span> &#123;</span></div><div class="line">    Object key;</div><div class="line">    Object value;</div><div class="line">    </div><div class="line">    public Entry() &#123;&#125;</div><div class="line">    </div><div class="line">    public Entry(Object key, Object value) &#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        this.key = key;</div><div class="line">        this.value = value;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>HashMap操作的是键值对,需要一个Entry类来实现</p>
+<blockquote>
+<p>MyHashMap类的简单实现：</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line">public class MyHashMap &#123;</div><div class="line">    Entry[] arr = new Entry[100];</div><div class="line">    int size;</div><div class="line">    </div><div class="line">    public void put(Object key, Object value) &#123;</div><div class="line">        Entry e = new Entry(key, value);</div><div class="line">        for(int i = 0;i &lt; size; i++) &#123;</div><div class="line">            if(arr[i].key.equals(key)) &#123;</div><div class="line">                arr[i].value = value;</div><div class="line">                return ;</div><div class="line">            &#125;</div><div class="line">        &#125;                            //由于HashMap只允许存在唯一键,重复的键值对会被新值覆盖,所以引入这段代码</div><div class="line">        arr[size++] = e;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public Object get(Object key) &#123;</div><div class="line">        for(int i = 0;i &lt; size; i++) &#123;</div><div class="line">            if(arr[i].key.equals(key)) &#123;</div><div class="line">                return arr[i].value;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return null;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void remove(Object key) &#123;</div><div class="line">        for(int i = 0;i &lt; size; i++) &#123;</div><div class="line">            if(arr[i].key.equals(key)) &#123;</div><div class="line">                arr[i].value = null;</div><div class="line">                size--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public boolean containsKey(Object key) &#123;</div><div class="line">        for(int i = 0;i &lt; size; i++) &#123;</div><div class="line">            if(arr[i].key.equals(key)) &#123;</div><div class="line">                return true;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public boolean containsValue(Object value) &#123;</div><div class="line">        for(int i = 0;i &lt; size; i++) &#123;</div><div class="line">            if(arr[i].value.equals(value)) &#123;</div><div class="line">                return true;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public int getSize() &#123;</div><div class="line">        return size;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void setSize(int size) &#123;</div><div class="line">        this.size = size;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>显然,基本实现HashMap的方法效率低下,需要改进</p>
+<h3 id="HashMap改进版"><a href="#HashMap改进版" class="headerlink" title="HashMap改进版"></a>HashMap改进版</h3><p>实际上,HashMap的底层实现是通过Array和LinkedList共同实现的,所以HashMap综合了两者的优点,实现的关键在于利用hashcode:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//存储时:</div><div class="line">int hash = key.hashCode();</div><div class="line">int index = hash % Entry[].length;</div><div class="line">Entry[index] = value;</div><div class="line"></div><div class="line">//取值时:</div><div class="line">int hash = key.hashCode();</div><div class="line">int index = hash % Entry[].length;</div><div class="line">return Entry[index];</div></pre></td></tr></table></figure>
+<blockquote>
+<p>HashMap实现的图片说明:</p>
+</blockquote>
+<p><img src="1.png" alt="loading~~~"></p>
+<p><img src="2.jpg" alt="loading~~~"></p>
+<blockquote>
+<p>Entry类的升级:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Entry</span>&lt;K,<span class="title">V</span>&gt;&#123;</span></div><div class="line">    final K key;</div><div class="line">    V value;</div><div class="line">    Entry&lt;K,V&gt; <span class="keyword">next</span>;<span class="regexp">//</span>下一个结点</div><div class="line"> </div><div class="line">    public Entry(K key, V value, Entry&lt;K, V&gt; <span class="keyword">next</span>) &#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        this.key = key;</div><div class="line">        this.value = value;</div><div class="line">        this.<span class="keyword">next</span> = <span class="keyword">next</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public final K getKey() &#123;</div><div class="line">        <span class="keyword">return</span> key;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public final V getValue() &#123;</div><div class="line">        <span class="keyword">return</span> value;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public final V setValue(V newValue) &#123;</div><div class="line">    V oldValue = value;</div><div class="line">        value = newValue;</div><div class="line">        <span class="keyword">return</span> oldValue;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>MyHashMap类的实现:</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">public class MyHashMap&lt;K, V&gt; &#123;</div><div class="line">    private Entry[] table;</div><div class="line">    static final int DEFAULT_INITIAL_CAPACITY = 16;//默认数组长度</div><div class="line">    private int size;</div><div class="line"></div><div class="line">    public Hash() &#123;</div><div class="line">        table = new Entry[DEFAULT_INITIAL_CAPACITY];</div><div class="line">        size = DEFAULT_INITIAL_CAPACITY;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public int getSize() &#123;</div><div class="line">        return size;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    // 求index</div><div class="line">    static int indexFor(int h, int length) &#123;</div><div class="line">        return h % (length - 1);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //获取value</div><div class="line">    public V get(Object key) &#123;</div><div class="line">        if (key == null)</div><div class="line">            return null;</div><div class="line">        int hash = key.hashCode();</div><div class="line">        int index = indexFor(hash, table.length);// 求key在数组中的下标</div><div class="line">        for (Entry&lt;K, V&gt; e = table[index]; e != null; e = e.next) &#123;</div><div class="line">            Object k = e.key;</div><div class="line">            if (e.key.hashCode() == hash &amp;&amp; (k == key || key.equals(k)))</div><div class="line">                return e.value;</div><div class="line">        &#125;</div><div class="line">        return null;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public V put(K key, V value) &#123;</div><div class="line">        if (key == null)</div><div class="line">            return null;</div><div class="line">        int hash = key.hashCode();</div><div class="line">        int index = indexFor(hash, table.length);</div><div class="line"></div><div class="line">        for (Entry&lt;K, V&gt; e = table[index]; e != null; e = e.next) &#123;</div><div class="line">            Object k = e.key;</div><div class="line">            if (e.key.hashCode() == hash &amp;&amp; (k == key || key.equals(k))) &#123;</div><div class="line">                V oldValue = e.value;</div><div class="line">                e.value = value;</div><div class="line">                return oldValue;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        // 如果key值不存在，那么需要添加</div><div class="line">        Entry&lt;K, V&gt; e = table[index];// 获取当前数组中的e</div><div class="line">        table[index] = new Entry&lt;K, V&gt;(key, value, e);// 新建一个Entry，并将其指向原先的e</div><div class="line">        return null;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;基于哈希表的 Map 接口的实现。此实现提供所有可选的映射操作，并允许使用 null 值和 null 键。（除了非同步和允许使用 null 之外，HashMap 类与 Hashtable 大致相同。）此类不保证映射的顺序，特别是它不保证该顺序恒久不变。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;(Hash table based implementation of the Map interface. This implementation provides all of the optional map operations, and permits null values and the null key. (The HashMap class is roughly equivalent to Hashtable, except that it is unsynchronized and permits nulls.) This class makes no guarantees as to the order of the map; in particular, it does not guarantee that the order will remain constant over time.  )&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;此实现假定哈希函数将元素适当地分布在各桶(buckets)之间，可为基本操作（get 和 put）提供稳定的性能。迭代 collection 视图所需的时间与 HashMap 实例的“容量”（桶的数量）及其大小（键-值映射关系数）成比例。所以，如果迭代性能很重要，则不要将初始容量设置得太高（或将加载因子设置得太低）。&lt;/em&gt; &lt;/p&gt;
+&lt;p&gt;(This implementation provides constant-time performance for the basic operations (get and put), assuming the hash function disperses the elements properly among the buckets. Iteration over collection views requires time proportional to the “capacity” of the HashMap instance (the number of buckets) plus its size (the number of key-value mappings). Thus, it’s very important not to set the initial capacity too high (or the load factor too low) if iteration performance is important. )&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="DATA STRUCTURES" scheme="http://yoursite.com/categories/DATA-STRUCTURES/"/>
+    
+    
+      <category term="Data Structures" scheme="http://yoursite.com/tags/Data-Structures/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用容器（Collection）实现类总结（二）——LinkedList</title>
+    <link href="http://yoursite.com/2017/05/06/%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E6%80%BB%E7%BB%93-three/"/>
+    <id>http://yoursite.com/2017/05/06/常用容器总结-three/</id>
+    <published>2017-05-06T09:40:24.150Z</published>
+    <updated>2017-05-06T09:54:52.432Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>List 接口的链接列表实现。实现所有可选的列表操作，并且允许所有元素（包括 null）。除了实现 List 接口外，LinkedList 类还为在列表的开头及结尾 get、remove 和 insert 元素提供了统一的命名方法。这些操作允许将链接列表用作堆栈、队列或双端队列。</em></p>
+<p>（Doubly-linked list implementation of the List and Deque interfaces. Implements all optional list operations, and permits all elements (including null).All of the operations perform as could be expected for a doubly-linked list. Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index. ）</p>
+<p><em>所有操作都是按照双重链接列表（doubly-linked list）的需要执行的。在列表中编索引的操作将从开头或结尾遍历列表（从靠近指定索引的一端）。</em></p>
+<p>（All of the operations perform as could be expected for a doubly-linked list. Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index. ）<br><a id="more"></a></p>
+<h3 id="LinkedList的优、缺点分析"><a href="#LinkedList的优、缺点分析" class="headerlink" title="LinkedList的优、缺点分析"></a>LinkedList的优、缺点分析</h3><p>优点：</p>
+<ul>
+<li>操作的是数据指针，相对ArrayList大大增强了增、删速率</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>查找速率较低</li>
+<li>线程不安全</li>
+</ul>
+<blockquote>
+<p>双向链表示意:</p>
+</blockquote>
+<p><img src="1.jpg" alt="loading~~~"></p>
+<p><strong>链表与泛型集合有一个重要区别:链表是一个有序集合,每个对象的位置很重要.<br>LinkedList.add方法是将元素添加到列表的最后,但是有时我们需要在列表中插入一个元素,这时这时使用迭代器就很必要.</strong></p>
+<blockquote>
+<p>图例:</p>
+</blockquote>
+<p><img src="2.jpg" alt="loading~~~"></p>
+<blockquote>
+<p>相关代码:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">List&lt;String&gt; staff = new LinkedList&lt;&gt;();</div><div class="line">staff.add(<span class="string">"Amy"</span>);</div><div class="line">staff.add(<span class="string">"Bob"</span>);</div><div class="line">staff.add(<span class="string">"Carl"</span>);</div><div class="line">ListIterator&lt;String&gt; iter = staff.listIterator();</div><div class="line">iter.<span class="keyword">next</span>(); <span class="regexp">//</span> skip past first element</div><div class="line">iter.add(<span class="string">"Juliet"</span>);</div></pre></td></tr></table></figure>
+<p><strong>注意</strong>:<br>这里有个调用remove方法的小细节——迭代器的删除和backspace工作方式有区别,在调用了next后,remove确实是删除了迭代后左侧的元素,但是在调用了previous之后,remove的是迭代后右侧的元素,并且不能连续调用两次remove.</p>
+<p>add只依赖于迭代器的位置,而remove注重迭代器的状态.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public static void main(String[] args) &#123;</div><div class="line">        List&lt;String&gt; l = new LinkedList&lt;&gt;();</div><div class="line">        l.add(<span class="string">"a"</span>);</div><div class="line">        l.add(<span class="string">"b"</span>);</div><div class="line">        l.add(<span class="string">"c"</span>);</div><div class="line">        ListIterator&lt;String&gt; it = l.listIterator();</div><div class="line">        it.<span class="keyword">next</span>();</div><div class="line">        it.add(<span class="string">"some"</span>); <span class="regexp">//</span>在a后插入some</div><div class="line">        it.previous();</div><div class="line">        it.remove();</div><div class="line">        System.out.println(l);  <span class="regexp">//</span>输出[a, b, c],删除的是some而非a</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现"></a>基本实现</h3><blockquote>
+<p><strong>Node类的实现</strong>：<br>由于在链表中，出现了节点（Node）的概念，所以我们先写如一个节点类，来操控指针：</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Node</span> &#123;</span></div><div class="line">    private Node previous;</div><div class="line">    private Node <span class="keyword">next</span>;</div><div class="line">    private Object obj;</div><div class="line">    </div><div class="line">    public Node()&#123;&#125;</div><div class="line">    </div><div class="line">    public Node(Node previous, Node <span class="keyword">next</span>, Object obj) &#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        this.previous = previous;</div><div class="line">        this.<span class="keyword">next</span> = <span class="keyword">next</span>;</div><div class="line">        this.obj = obj;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public Node getPrevious() &#123;</div><div class="line">        <span class="keyword">return</span> previous;</div><div class="line">    &#125;</div><div class="line">    public void setPrevious(Node previous) &#123;</div><div class="line">        this.previous = previous;</div><div class="line">    &#125;</div><div class="line">    public Node getNext() &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">next</span>;</div><div class="line">    &#125;</div><div class="line">    public void setNext(Node <span class="keyword">next</span>) &#123;</div><div class="line">        this.<span class="keyword">next</span> = <span class="keyword">next</span>;</div><div class="line">    &#125;</div><div class="line">    public Object getObj() &#123;</div><div class="line">        <span class="keyword">return</span> obj;</div><div class="line">    &#125;</div><div class="line">    public void setObj(Object obj) &#123;</div><div class="line">        this.obj = obj;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们所实现的是双向链表，因此我定义了next和previous两个变量，顾名思义，目的就是为了对一个数据进行前后操作，后面定义了一系列getter/setter方法以达到增、删的操作；object变量显然就是储存的数据了</p>
+<blockquote>
+<p><strong>LinkedList类的实现</strong>：</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">LinkList</span> &#123;</span></div><div class="line">    private Node first;</div><div class="line">    private Node last;</div><div class="line">    </div><div class="line">    private int size;</div><div class="line">    </div><div class="line">    public void add(Object obj) &#123;</div><div class="line">        Node n = new Node();</div><div class="line">        <span class="keyword">if</span>(first == null) &#123;</div><div class="line">            n.setPrevious(null);</div><div class="line">            n.setObj(obj);</div><div class="line">            n.setNext(null);</div><div class="line">            </div><div class="line">            first = n;</div><div class="line">            last = n;</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            n.setPrevious(last);</div><div class="line">            n.setObj(obj);</div><div class="line">            n.setNext(null);</div><div class="line">            </div><div class="line">            last.setNext(n);</div><div class="line">            last = n;</div><div class="line">        &#125;</div><div class="line">        size++;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void add(int index, Object obj) &#123;</div><div class="line">        rangeCheck(index);</div><div class="line">        Node temp = (Node) find(index);</div><div class="line">        Node newNode = new Node();</div><div class="line">        Node prev = temp.getPrevious();</div><div class="line">        <span class="keyword">if</span>(temp != null) &#123;</div><div class="line">            newNode.setObj(obj);</div><div class="line">            prev.setNext(newNode);</div><div class="line">            newNode.setNext(temp);</div><div class="line">            newNode.setPrevious(prev);</div><div class="line">            temp.setPrevious(newNode);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void rangeCheck(int index) &#123;</div><div class="line">        <span class="keyword">if</span>(index &lt; <span class="number">0</span> <span class="params">||</span> index &gt;= this.size) &#123;   </div><div class="line">            try &#123;</div><div class="line">                throw new Exception();</div><div class="line">            &#125;catch(Exception e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public Object get(int index) &#123;</div><div class="line">        rangeCheck(index);</div><div class="line">        Node temp = find(index);</div><div class="line">        <span class="keyword">if</span>(temp != null) &#123;</div><div class="line">            <span class="keyword">return</span> temp.getObj();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> null;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void remove(int index) &#123;</div><div class="line">        Node temp = find(index);</div><div class="line">        <span class="keyword">if</span> (temp != null) &#123;</div><div class="line">            Node prev = temp.getPrevious();</div><div class="line">            Node <span class="keyword">next</span> = temp.getNext();</div><div class="line">            prev.setNext(<span class="keyword">next</span>);</div><div class="line">            <span class="keyword">next</span>.setPrevious(prev);</div><div class="line">            size--;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">        </div><div class="line">    public Node find(int index) &#123;</div><div class="line">        Node temp = first;</div><div class="line">        <span class="keyword">if</span>(first != null) &#123;</div><div class="line">            <span class="keyword">for</span>(int i = <span class="number">0</span>;i &lt; index; i++) &#123;</div><div class="line">                temp = first;</div><div class="line">                temp = temp.getNext();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> temp;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public int getSize() &#123;</div><div class="line">        <span class="keyword">return</span> size;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;List 接口的链接列表实现。实现所有可选的列表操作，并且允许所有元素（包括 null）。除了实现 List 接口外，LinkedList 类还为在列表的开头及结尾 get、remove 和 insert 元素提供了统一的命名方法。这些操作允许将链接列表用作堆栈、队列或双端队列。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;（Doubly-linked list implementation of the List and Deque interfaces. Implements all optional list operations, and permits all elements (including null).All of the operations perform as could be expected for a doubly-linked list. Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index. ）&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;所有操作都是按照双重链接列表（doubly-linked list）的需要执行的。在列表中编索引的操作将从开头或结尾遍历列表（从靠近指定索引的一端）。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;（All of the operations perform as could be expected for a doubly-linked list. Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index. ）&lt;br&gt;
+    
+    </summary>
+    
+      <category term="DATA STRUCTURES" scheme="http://yoursite.com/categories/DATA-STRUCTURES/"/>
+    
+    
+      <category term="Data Structures" scheme="http://yoursite.com/tags/Data-Structures/"/>
+    
+  </entry>
   
   <entry>
     <title>常用容器（Collection）实现类总结（一）——ArrayList</title>

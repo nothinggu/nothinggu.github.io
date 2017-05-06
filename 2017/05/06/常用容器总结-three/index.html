@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Data Structures," />
 
 
 
@@ -88,15 +88,20 @@
 
 
 
-<meta name="description" content="STAY HUNGRY!STAY FOOLISH!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="I&#39;m NOthing">
-<meta property="og:url" content="http://yoursite.com/tags/Algorithms/index.html">
+<meta name="description" content="List 接口的链接列表实现。实现所有可选的列表操作，并且允许所有元素（包括 null）。除了实现 List 接口外，LinkedList 类还为在列表的开头及结尾 get、remove 和 insert 元素提供了统一的命名方法。这些操作允许将链接列表用作堆栈、队列或双端队列。 （Doubly-linked list implementation of the List and Deque in">
+<meta name="keywords" content="Data Structures">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用容器（Collection）实现类总结（二）——LinkedList">
+<meta property="og:url" content="http://yoursite.com/2017/05/06/常用容器总结-three/index.html">
 <meta property="og:site_name" content="I&#39;m NOthing">
-<meta property="og:description" content="STAY HUNGRY!STAY FOOLISH!">
+<meta property="og:description" content="List 接口的链接列表实现。实现所有可选的列表操作，并且允许所有元素（包括 null）。除了实现 List 接口外，LinkedList 类还为在列表的开头及结尾 get、remove 和 insert 元素提供了统一的命名方法。这些操作允许将链接列表用作堆栈、队列或双端队列。 （Doubly-linked list implementation of the List and Deque in">
+<meta property="og:image" content="http://yoursite.com/2017/05/06/常用容器总结-three/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/05/06/常用容器总结-three/2.jpg">
+<meta property="og:updated_time" content="2017-05-06T09:54:52.432Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="I&#39;m NOthing">
-<meta name="twitter:description" content="STAY HUNGRY!STAY FOOLISH!">
+<meta name="twitter:title" content="常用容器（Collection）实现类总结（二）——LinkedList">
+<meta name="twitter:description" content="List 接口的链接列表实现。实现所有可选的列表操作，并且允许所有元素（包括 null）。除了实现 List 接口外，LinkedList 类还为在列表的开头及结尾 get、remove 和 insert 元素提供了统一的命名方法。这些操作允许将链接列表用作堆栈、队列或双端队列。 （Doubly-linked list implementation of the List and Deque in">
+<meta name="twitter:image" content="http://yoursite.com/2017/05/06/常用容器总结-three/1.jpg">
 
 
 
@@ -124,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Algorithms/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/06/常用容器总结-three/"/>
 
 
 
 
 
-  <title>标签: Algorithms | I'm NOthing</title>
+  <title>常用容器（Collection）实现类总结（二）——LinkedList | I'm NOthing</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -174,7 +179,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -292,44 +297,243 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>Algorithms<small>标签</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/常用容器总结-three/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Allen Gu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/pic2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I'm NOthing">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">常用容器（Collection）实现类总结（二）——LinkedList</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T17:40:24+08:00">
+                2017-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/DATA-STRUCTURES/" itemprop="url" rel="index">
+                    <span itemprop="name">DATA STRUCTURES</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/06/常用容器总结-three/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/05/06/常用容器总结-three/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/05/06/常用容器总结-three/" class="leancloud_visitors" data-flag-title="常用容器（Collection）实现类总结（二）——LinkedList">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p><em>List 接口的链接列表实现。实现所有可选的列表操作，并且允许所有元素（包括 null）。除了实现 List 接口外，LinkedList 类还为在列表的开头及结尾 get、remove 和 insert 元素提供了统一的命名方法。这些操作允许将链接列表用作堆栈、队列或双端队列。</em></p>
+<p>（Doubly-linked list implementation of the List and Deque interfaces. Implements all optional list operations, and permits all elements (including null).All of the operations perform as could be expected for a doubly-linked list. Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index. ）</p>
+<p><em>所有操作都是按照双重链接列表（doubly-linked list）的需要执行的。在列表中编索引的操作将从开头或结尾遍历列表（从靠近指定索引的一端）。</em></p>
+<p>（All of the operations perform as could be expected for a doubly-linked list. Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index. ）<br><a id="more"></a></p>
+<h3 id="LinkedList的优、缺点分析"><a href="#LinkedList的优、缺点分析" class="headerlink" title="LinkedList的优、缺点分析"></a>LinkedList的优、缺点分析</h3><p>优点：</p>
+<ul>
+<li>操作的是数据指针，相对ArrayList大大增强了增、删速率</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>查找速率较低</li>
+<li>线程不安全</li>
+</ul>
+<blockquote>
+<p>双向链表示意:</p>
+</blockquote>
+<p><img src="1.jpg" alt="loading~~~"></p>
+<p><strong>链表与泛型集合有一个重要区别:链表是一个有序集合,每个对象的位置很重要.<br>LinkedList.add方法是将元素添加到列表的最后,但是有时我们需要在列表中插入一个元素,这时这时使用迭代器就很必要.</strong></p>
+<blockquote>
+<p>图例:</p>
+</blockquote>
+<p><img src="2.jpg" alt="loading~~~"></p>
+<blockquote>
+<p>相关代码:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">List&lt;String&gt; staff = new LinkedList&lt;&gt;();</div><div class="line">staff.add(<span class="string">"Amy"</span>);</div><div class="line">staff.add(<span class="string">"Bob"</span>);</div><div class="line">staff.add(<span class="string">"Carl"</span>);</div><div class="line">ListIterator&lt;String&gt; iter = staff.listIterator();</div><div class="line">iter.<span class="keyword">next</span>(); <span class="regexp">//</span> skip past first element</div><div class="line">iter.add(<span class="string">"Juliet"</span>);</div></pre></td></tr></table></figure>
+<p><strong>注意</strong>:<br>这里有个调用remove方法的小细节——迭代器的删除和backspace工作方式有区别,在调用了next后,remove确实是删除了迭代后左侧的元素,但是在调用了previous之后,remove的是迭代后右侧的元素,并且不能连续调用两次remove.</p>
+<p>add只依赖于迭代器的位置,而remove注重迭代器的状态.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public static void main(String[] args) &#123;</div><div class="line">        List&lt;String&gt; l = new LinkedList&lt;&gt;();</div><div class="line">        l.add(<span class="string">"a"</span>);</div><div class="line">        l.add(<span class="string">"b"</span>);</div><div class="line">        l.add(<span class="string">"c"</span>);</div><div class="line">        ListIterator&lt;String&gt; it = l.listIterator();</div><div class="line">        it.<span class="keyword">next</span>();</div><div class="line">        it.add(<span class="string">"some"</span>); <span class="regexp">//</span>在a后插入some</div><div class="line">        it.previous();</div><div class="line">        it.remove();</div><div class="line">        System.out.println(l);  <span class="regexp">//</span>输出[a, b, c],删除的是some而非a</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现"></a>基本实现</h3><blockquote>
+<p><strong>Node类的实现</strong>：<br>由于在链表中，出现了节点（Node）的概念，所以我们先写如一个节点类，来操控指针：</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Node</span> &#123;</span></div><div class="line">    private Node previous;</div><div class="line">    private Node <span class="keyword">next</span>;</div><div class="line">    private Object obj;</div><div class="line">    </div><div class="line">    public Node()&#123;&#125;</div><div class="line">    </div><div class="line">    public Node(Node previous, Node <span class="keyword">next</span>, Object obj) &#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        this.previous = previous;</div><div class="line">        this.<span class="keyword">next</span> = <span class="keyword">next</span>;</div><div class="line">        this.obj = obj;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public Node getPrevious() &#123;</div><div class="line">        <span class="keyword">return</span> previous;</div><div class="line">    &#125;</div><div class="line">    public void setPrevious(Node previous) &#123;</div><div class="line">        this.previous = previous;</div><div class="line">    &#125;</div><div class="line">    public Node getNext() &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">next</span>;</div><div class="line">    &#125;</div><div class="line">    public void setNext(Node <span class="keyword">next</span>) &#123;</div><div class="line">        this.<span class="keyword">next</span> = <span class="keyword">next</span>;</div><div class="line">    &#125;</div><div class="line">    public Object getObj() &#123;</div><div class="line">        <span class="keyword">return</span> obj;</div><div class="line">    &#125;</div><div class="line">    public void setObj(Object obj) &#123;</div><div class="line">        this.obj = obj;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们所实现的是双向链表，因此我定义了next和previous两个变量，顾名思义，目的就是为了对一个数据进行前后操作，后面定义了一系列getter/setter方法以达到增、删的操作；object变量显然就是储存的数据了</p>
+<blockquote>
+<p><strong>LinkedList类的实现</strong>：</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">LinkList</span> &#123;</span></div><div class="line">    private Node first;</div><div class="line">    private Node last;</div><div class="line">    </div><div class="line">    private int size;</div><div class="line">    </div><div class="line">    public void add(Object obj) &#123;</div><div class="line">        Node n = new Node();</div><div class="line">        <span class="keyword">if</span>(first == null) &#123;</div><div class="line">            n.setPrevious(null);</div><div class="line">            n.setObj(obj);</div><div class="line">            n.setNext(null);</div><div class="line">            </div><div class="line">            first = n;</div><div class="line">            last = n;</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            n.setPrevious(last);</div><div class="line">            n.setObj(obj);</div><div class="line">            n.setNext(null);</div><div class="line">            </div><div class="line">            last.setNext(n);</div><div class="line">            last = n;</div><div class="line">        &#125;</div><div class="line">        size++;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void add(int index, Object obj) &#123;</div><div class="line">        rangeCheck(index);</div><div class="line">        Node temp = (Node) find(index);</div><div class="line">        Node newNode = new Node();</div><div class="line">        Node prev = temp.getPrevious();</div><div class="line">        <span class="keyword">if</span>(temp != null) &#123;</div><div class="line">            newNode.setObj(obj);</div><div class="line">            prev.setNext(newNode);</div><div class="line">            newNode.setNext(temp);</div><div class="line">            newNode.setPrevious(prev);</div><div class="line">            temp.setPrevious(newNode);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void rangeCheck(int index) &#123;</div><div class="line">        <span class="keyword">if</span>(index &lt; <span class="number">0</span> <span class="params">||</span> index &gt;= this.size) &#123;   </div><div class="line">            try &#123;</div><div class="line">                throw new Exception();</div><div class="line">            &#125;catch(Exception e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public Object get(int index) &#123;</div><div class="line">        rangeCheck(index);</div><div class="line">        Node temp = find(index);</div><div class="line">        <span class="keyword">if</span>(temp != null) &#123;</div><div class="line">            <span class="keyword">return</span> temp.getObj();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> null;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void remove(int index) &#123;</div><div class="line">        Node temp = find(index);</div><div class="line">        <span class="keyword">if</span> (temp != null) &#123;</div><div class="line">            Node prev = temp.getPrevious();</div><div class="line">            Node <span class="keyword">next</span> = temp.getNext();</div><div class="line">            prev.setNext(<span class="keyword">next</span>);</div><div class="line">            <span class="keyword">next</span>.setPrevious(prev);</div><div class="line">            size--;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">        </div><div class="line">    public Node find(int index) &#123;</div><div class="line">        Node temp = first;</div><div class="line">        <span class="keyword">if</span>(first != null) &#123;</div><div class="line">            <span class="keyword">for</span>(int i = <span class="number">0</span>;i &lt; index; i++) &#123;</div><div class="line">                temp = first;</div><div class="line">                temp = temp.getNext();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> temp;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public int getSize() &#123;</div><div class="line">        <span class="keyword">return</span> size;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/05/06/冒泡排序/" itemprop="url">
-              
-                <span itemprop="name">冒泡算法的逻辑分析</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-06T17:06:41+08:00"
-              content="2017-05-06" >
-          05-06
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------本文结束<i class="fa fa-paw"></i>感谢阅读------</div>
+    
+</div>
+      
+    </div>
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Data-Structures/" rel="tag"># Data Structures</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/06/常用容器总结_two/" rel="next" title="常用容器（Collection）实现类总结（一）——ArrayList">
+                <i class="fa fa-chevron-left"></i> 常用容器（Collection）实现类总结（一）——ArrayList
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/06/常用容器总结_four/" rel="prev" title="常用容器（Collection）实现类总结（三）——HashMap">
+                常用容器（Collection）实现类总结（三）——HashMap <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -337,6 +541,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -356,8 +571,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/pic2.jpg"
@@ -457,6 +681,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedList的优、缺点分析"><span class="nav-number">1.</span> <span class="nav-text">LinkedList的优、缺点分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本实现"><span class="nav-number">2.</span> <span class="nav-text">基本实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -577,6 +817,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
@@ -594,6 +838,18 @@
       <script id="dsq-count-scr" src="https://G.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/05/06/常用容器总结-three/';
+          this.page.identifier = '2017/05/06/常用容器总结-three/';
+          this.page.title = '常用容器（Collection）实现类总结（二）——LinkedList';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://G.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   

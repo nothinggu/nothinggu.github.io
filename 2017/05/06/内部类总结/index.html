@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java," />
 
 
 
@@ -88,15 +88,17 @@
 
 
 
-<meta name="description" content="STAY HUNGRY!STAY FOOLISH!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="I&#39;m NOthing">
-<meta property="og:url" content="http://yoursite.com/tags/Algorithms/index.html">
+<meta name="description" content="内部类是java中比较复杂的内容,接下来进行一些细节总结:  内部类(inner class)是定义在一个类中的类,这种技巧有什么好处呢?   内部类可以访问外部类中的数据,包括私有数据 内部类对于包中其它类来说是隐藏的 当想要定义一个回调(callback)函数时,可以使用匿名内部类,这样更为便捷　　(回调函数:可以指出一个特定事件发生时应该采取的动作.例如在按下鼠标或选择某个菜单时应该采取什么">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="内部类总结">
+<meta property="og:url" content="http://yoursite.com/2017/05/06/内部类总结/index.html">
 <meta property="og:site_name" content="I&#39;m NOthing">
-<meta property="og:description" content="STAY HUNGRY!STAY FOOLISH!">
+<meta property="og:description" content="内部类是java中比较复杂的内容,接下来进行一些细节总结:  内部类(inner class)是定义在一个类中的类,这种技巧有什么好处呢?   内部类可以访问外部类中的数据,包括私有数据 内部类对于包中其它类来说是隐藏的 当想要定义一个回调(callback)函数时,可以使用匿名内部类,这样更为便捷　　(回调函数:可以指出一个特定事件发生时应该采取的动作.例如在按下鼠标或选择某个菜单时应该采取什么">
+<meta property="og:updated_time" content="2017-05-06T11:11:41.010Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="I&#39;m NOthing">
-<meta name="twitter:description" content="STAY HUNGRY!STAY FOOLISH!">
+<meta name="twitter:title" content="内部类总结">
+<meta name="twitter:description" content="内部类是java中比较复杂的内容,接下来进行一些细节总结:  内部类(inner class)是定义在一个类中的类,这种技巧有什么好处呢?   内部类可以访问外部类中的数据,包括私有数据 内部类对于包中其它类来说是隐藏的 当想要定义一个回调(callback)函数时,可以使用匿名内部类,这样更为便捷　　(回调函数:可以指出一个特定事件发生时应该采取的动作.例如在按下鼠标或选择某个菜单时应该采取什么">
 
 
 
@@ -124,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Algorithms/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/06/内部类总结/"/>
 
 
 
 
 
-  <title>标签: Algorithms | I'm NOthing</title>
+  <title>内部类总结 | I'm NOthing</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -174,7 +176,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -292,44 +294,251 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>Algorithms<small>标签</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/内部类总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Allen Gu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/pic2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I'm NOthing">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">内部类总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T18:32:23+08:00">
+                2017-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/06/内部类总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/05/06/内部类总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/05/06/内部类总结/" class="leancloud_visitors" data-flag-title="内部类总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p><strong>内部类</strong>是java中比较复杂的内容,接下来进行一些细节总结:</p>
+<blockquote>
+<p>内部类(inner class)是定义在一个类中的类,这种技巧有什么好处呢?</p>
+</blockquote>
+<ul>
+<li>内部类可以访问外部类中的数据,包括私有数据</li>
+<li>内部类对于包中其它类来说是隐藏的</li>
+<li>当想要定义一个<em>回调(callback)函数</em>时,可以使用匿名内部类,这样更为便捷<br>　　(回调函数:可以指出一个特定事件发生时应该采取的动作.例如在按下鼠标或选择某个菜单时应该采取什么行动)<a id="more"></a>
+</li>
+</ul>
+<h3 id="使用内部类访问对象状态"><a href="#使用内部类访问对象状态" class="headerlink" title="使用内部类访问对象状态"></a>使用内部类访问对象状态</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">TalkingClock</span></span></div><div class="line">&#123;</div><div class="line">    private int interval;</div><div class="line">    private boolean beep;</div><div class="line"></div><div class="line">    public TalkingClock(int interval, boolean beep) &#123; . . . &#125;</div><div class="line">    public void start() &#123; . . . &#125;</div><div class="line"></div><div class="line">    public <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="title">implements</span> <span class="title">ActionListener</span> //内部类</span></div><div class="line"></div><div class="line">    &#123;</div><div class="line">        . . .</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>内部类的详细代码:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="title">implements</span> <span class="title">ActionListener</span></span></div><div class="line">&#123;</div><div class="line">    public void actionPerformed(ActionEvent event)</div><div class="line">    &#123;</div><div class="line">        System.out.println(<span class="string">"At the tone, the time is "</span> + new Date());</div><div class="line">        <span class="keyword">if</span> (beep) Toolkit.getDefaultToolkit().beep();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以发现,在内部类中的beep是外部类中的变量,这样的引用是如何做到的呢?</p>
+<p>事实上,是通过这样一种方式调用的:   </p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (outer.beep) Toolkit.getDefaultToolkit().beep();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>但是,outer并不是java中的关键字,可以看到,内部类并没有构造器,所以编译器隐式地给内部类了一个构造器:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">public TimePrinter(TalkingClock clock)</div><div class="line">&#123;</div><div class="line">    outer = clock;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="内部类的特殊语法规则"><a href="#内部类的特殊语法规则" class="headerlink" title="内部类的特殊语法规则"></a>内部类的特殊语法规则</h3><blockquote>
+<p>内部类对外部类引用的语法还要复杂一点:outerclass.this表示外部类数据的引用,如:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="title">implements</span> <span class="title">ActionListener</span></span></div><div class="line">&#123;</div><div class="line">    public void actionPerformed(ActionEvent event)</div><div class="line">    &#123;</div><div class="line">        System.out.println(<span class="string">"At the tone, the time is "</span> + new Date());</div><div class="line">        <span class="keyword">if</span> (outer.this.beep) Toolkit.getDefaultToolkit().beep();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>细节规则:</p>
+<ul>
+<li>内部类中所有的静态域都必须是final,因为对于一个外部类的实例,我们希望它都只有唯一一个内部类实例</li>
+<li>内部类不能有静态方法</li>
+</ul>
+<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3><blockquote>
+<p>如果内部类只在外部类的一个方法中调用了一次,我们可以采取使用局部内部类来简化代码:</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public void start()</div><div class="line">&#123;</div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="title">implements</span> <span class="title">ActionListener</span></span></div><div class="line">    &#123;</div><div class="line">        public void actionPerformed(ActionEvent event)</div><div class="line">        &#123;</div><div class="line">            System.out.println(<span class="string">"At the tone, the time is "</span> + new Date());</div><div class="line">            <span class="keyword">if</span> (beep) Toolkit.getDefaultToolkit().beep();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    ActionListener listener = new TimePrinter();</div><div class="line">    Timer t = new Timer(interval, listener);</div><div class="line">    t.start();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>局部内部类不能用public和private来声明,它的作用域只限于在这个局部的块中<br>局部内部类的另一个优点是对外部世界完全隐蔽,即除了start()方法外,没有任何方法知道TimePrinter类</p>
+<p>细节规则:</p>
+</blockquote>
+<p>当局部内部类访问局部变量时,必须为final</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">int counter = <span class="number">0</span>;</div><div class="line">Date[] dates = new Date[<span class="number">100</span>];</div><div class="line"><span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; dates.length; i++)</div><div class="line">    dates[i] = new Date()</div><div class="line">        &#123;</div><div class="line">            public int compareTo(Date other)</div><div class="line">            &#123;</div><div class="line">                counter++; <span class="regexp">//</span>错误</div><div class="line">                <span class="keyword">return</span> <span class="keyword">super</span>.compareTo(other);</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">Arrays.sort(dates);</div><div class="line">System.out.println(counter + <span class="string">" comparisons."</span>);</div></pre></td></tr></table></figure>
+<h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public void start(int interval, boolean beep)</div><div class="line">&#123;</div><div class="line">    ActionListener listener = new ActionListener()</div><div class="line">    &#123;</div><div class="line">        public void actionPerformed(ActionEvent event)</div><div class="line">        &#123;</div><div class="line">            System.out.println(<span class="string">"At the tone, the time is "</span> + new Date());</div><div class="line">            <span class="keyword">if</span> (beep) Toolkit.getDefaultToolkit().beep();</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    Timer t = new Timer(interval, listener);</div><div class="line">    t.start();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>细节规则:</p>
+</blockquote>
+<p>由于构造器的名字必须与类相同,但是匿名内部类没有名字,所以匿名内部类没有构造器</p>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/05/06/冒泡排序/" itemprop="url">
-              
-                <span itemprop="name">冒泡算法的逻辑分析</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-06T17:06:41+08:00"
-              content="2017-05-06" >
-          05-06
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------本文结束<i class="fa fa-paw"></i>感谢阅读------</div>
+    
+</div>
+      
+    </div>
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/06/类的设计技巧简单总结/" rel="next" title="类的设计技巧简单总结">
+                <i class="fa fa-chevron-left"></i> 类的设计技巧简单总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/06/异常处理/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -337,6 +546,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -356,8 +576,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/pic2.jpg"
@@ -457,6 +686,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用内部类访问对象状态"><span class="nav-number">1.</span> <span class="nav-text">使用内部类访问对象状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内部类的特殊语法规则"><span class="nav-number">2.</span> <span class="nav-text">内部类的特殊语法规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局部内部类"><span class="nav-number">3.</span> <span class="nav-text">局部内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名内部类"><span class="nav-number">4.</span> <span class="nav-text">匿名内部类</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -577,6 +822,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
@@ -594,6 +843,18 @@
       <script id="dsq-count-scr" src="https://G.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/05/06/内部类总结/';
+          this.page.identifier = '2017/05/06/内部类总结/';
+          this.page.title = '内部类总结';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://G.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
