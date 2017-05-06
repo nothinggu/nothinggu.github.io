@@ -90,26 +90,28 @@
 
 
 
-<meta name="description" content="代码:  12345678910111213141516171819202122232425262728293031public static void copyFile(String srcPath, String destPath) throws IOException &amp;#123;        //建立File对象的来源与目的        File src = new File(src">
+<meta name="description" content="代码:  12345678910111213141516171819202122232425262728293031public static void copyFile(String srcPath, String destPath) throws IOException &amp;#123;        //建立File对象的来源与目的        File src = new File(sr">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用java写一个简单的文件拷贝程序吧">
 <meta property="og:url" content="http://yoursite.com/2017/05/06/用java写一个简单的文件拷贝程序吧/index.html">
 <meta property="og:site_name" content="I&#39;m NOthing">
-<meta property="og:description" content="代码:  12345678910111213141516171819202122232425262728293031public static void copyFile(String srcPath, String destPath) throws IOException &amp;#123;        //建立File对象的来源与目的        File src = new File(src">
+<meta property="og:description" content="代码:  12345678910111213141516171819202122232425262728293031public static void copyFile(String srcPath, String destPath) throws IOException &amp;#123;        //建立File对象的来源与目的        File src = new File(sr">
 <meta property="og:updated_time" content="2017-05-06T10:27:39.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用java写一个简单的文件拷贝程序吧">
-<meta name="twitter:description" content="代码:  12345678910111213141516171819202122232425262728293031public static void copyFile(String srcPath, String destPath) throws IOException &amp;#123;        //建立File对象的来源与目的        File src = new File(src">
+<meta name="twitter:description" content="代码:  12345678910111213141516171819202122232425262728293031public static void copyFile(String srcPath, String destPath) throws IOException &amp;#123;        //建立File对象的来源与目的        File src = new File(sr">
 
 
+
+<script type="text/javascript" src="G:\blog\test\themes\next\source\js\src\high.js"></script>
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -178,7 +180,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -240,6 +242,16 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-high">
+          <a href="javascript:void(0)" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-play"></i> <br />
+            
+            menu.high
           </a>
         </li>
       
@@ -414,7 +426,7 @@
       
 
       
-        <blockquote>
+        <script src="/assets/js/APlayer.min.js"> </script><blockquote>
 <p>代码:</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">public static void copyFile(String srcPath, String destPath) throws IOException &#123;</div><div class="line">        //建立File对象的来源与目的</div><div class="line">        File src = new File(srcPath);</div><div class="line">        File dest = new File(destPath);</div><div class="line">        </div><div class="line">        //由于只能拷贝文件,所以判定输入流是否为文件</div><div class="line">        if(!src.isFile()) &#123;</div><div class="line">            System.out.println("只能拷贝文件!");</div><div class="line">            throw new IOException("只能拷贝文件!");</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        //文件输入输出</div><div class="line">        InputStream is = new FileInputStream(src);</div><div class="line">        OutputStream os = new FileOutputStream(dest);</div><div class="line">        </div><div class="line">        //读取文件大小,并循环写出文件</div><div class="line">        byte[] flush = new byte[1024];</div><div class="line">        int len = 0;</div><div class="line">        while(-1 != (len = is.read(flush))) &#123;</div><div class="line">            os.write(flush, 0, len);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        //刷新此输出流并强制写出所有缓冲的输出字节</div><div class="line">        os.flush();</div><div class="line">        </div><div class="line">        //释放资源(一般先打开的后关闭)</div><div class="line">        os.close();</div><div class="line">        is.close();</div><div class="line">        </div><div class="line">        System.out.println("拷贝成功!");</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
@@ -551,7 +563,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -622,6 +634,7 @@
                 </a>
               </span>
             
+             <span class="links-of-author-item"><a title="小high一下~" style="underline: none;color:red" rel="alternate" class="mw-harlem_shake_slow wobble shake" href="javascript:shake()"><i class="fa fa-music"></i> &nbsp;&nbsp;High</a></span>
           
         </div>
 
@@ -739,6 +752,8 @@
 
   
   <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
 
 
   
