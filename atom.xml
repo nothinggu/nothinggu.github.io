@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-06T13:32:41.230Z</updated>
+  <updated>2017-05-06T17:06:01.395Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://yoursite.com/2017/05/06/win10_java_%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%AE%BE%E7%BD%AE/"/>
     <id>http://yoursite.com/2017/05/06/win10_java_环境变量设置/</id>
     <published>2017-05-06T12:34:00.844Z</published>
-    <updated>2017-05-06T13:32:41.230Z</updated>
+    <updated>2017-05-06T17:06:01.395Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>竟然忘了java环境变量怎么配了…丢人<br>写下笔记</p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>竟然忘了java环境变量怎么配了…丢人<br>写下笔记</p>
 <blockquote>
 <p>下载<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">java开发工具包</a>.</p>
 </blockquote>
@@ -59,7 +59,7 @@
     <published>2017-05-06T10:42:45.928Z</published>
     <updated>2017-05-06T12:32:27.545Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><h4 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h4><blockquote>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><h4 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h4><blockquote>
 <p>异常对象都是派生于throwable类的实例:</p>
 </blockquote>
 <p><img src="1.jpg" alt="loading~~~"></p>
@@ -188,7 +188,7 @@
     <published>2017-05-06T10:32:23.239Z</published>
     <updated>2017-05-06T11:11:41.010Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><strong>内部类</strong>是java中比较复杂的内容,接下来进行一些细节总结:</p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><strong>内部类</strong>是java中比较复杂的内容,接下来进行一些细节总结:</p>
 <blockquote>
 <p>内部类(inner class)是定义在一个类中的类,这种技巧有什么好处呢?</p>
 </blockquote>
@@ -263,7 +263,7 @@
     <published>2017-05-06T10:28:32.945Z</published>
     <updated>2017-05-06T11:12:40.898Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
 <p>保证数据的私有性(private):</p>
 </blockquote>
 <p>为了实现一个类的良好封装性,一定不要使用其他的方式去声明成员变量,这是为了后期代码维护做的基本准备.</p>
@@ -319,17 +319,14 @@
     <published>2017-05-06T10:26:30.178Z</published>
     <updated>2017-05-06T10:27:39.403Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
 <p>代码:</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">public static void copyFile(String srcPath, String destPath) throws IOException &#123;</div><div class="line">        //建立File对象的来源与目的</div><div class="line">        File src = new File(srcPath);</div><div class="line">        File dest = new File(destPath);</div><div class="line">        </div><div class="line">        //由于只能拷贝文件,所以判定输入流是否为文件</div><div class="line">        if(!src.isFile()) &#123;</div><div class="line">            System.out.println("只能拷贝文件!");</div><div class="line">            throw new IOException("只能拷贝文件!");</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        //文件输入输出</div><div class="line">        InputStream is = new FileInputStream(src);</div><div class="line">        OutputStream os = new FileOutputStream(dest);</div><div class="line">        </div><div class="line">        //读取文件大小,并循环写出文件</div><div class="line">        byte[] flush = new byte[1024];</div><div class="line">        int len = 0;</div><div class="line">        while(-1 != (len = is.read(flush))) &#123;</div><div class="line">            os.write(flush, 0, len);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        //刷新此输出流并强制写出所有缓冲的输出字节</div><div class="line">        os.flush();</div><div class="line">        </div><div class="line">        //释放资源(一般先打开的后关闭)</div><div class="line">        os.close();</div><div class="line">        is.close();</div><div class="line">        </div><div class="line">        System.out.println("拷贝成功!");</div><div class="line">    &#125;</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;blockquote&gt;
-&lt;p&gt;代码:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/css/lib/hint.min.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot;
     
     </summary>
     
@@ -347,7 +344,7 @@
     <published>2017-05-06T10:14:51.329Z</published>
     <updated>2017-05-06T11:13:17.344Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
 <p>按值调用(call by value):表示方法接收的是调用者提供的值<br>按引用调用(call by reference):表示方法接收的是调用者提供的地址</p>
 </blockquote>
 <p>一个方法可以修改<strong>引用传递</strong>所对应的变量值,而不能修改<strong>值传递</strong>调用所对应的变量值</p>
@@ -399,7 +396,7 @@
     <published>2017-05-06T10:07:49.232Z</published>
     <updated>2017-05-06T11:14:00.340Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><em>此类实现 Set 接口，由哈希表（实际上是一个 HashMap 实例）支持。它不保证 set 的迭代顺序；特别是它不保证该顺序恒久不变。此类允许使用 null 元素。</em></p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><em>此类实现 Set 接口，由哈希表（实际上是一个 HashMap 实例）支持。它不保证 set 的迭代顺序；特别是它不保证该顺序恒久不变。此类允许使用 null 元素。</em></p>
 <p>(This class implements the Set interface, backed by a hash table (actually a HashMap instance). It makes no guarantees as to the iteration order of the set; in particular, it does not guarantee that the order will remain constant over time. This class permits the null element. )</p>
 <p><strong>(注意:HashSet必须重写hashcode和equals方法)</strong></p>
 <a id="more"></a>
@@ -445,7 +442,7 @@
     <published>2017-05-06T09:55:30.318Z</published>
     <updated>2017-05-06T11:14:23.505Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><em>基于哈希表的 Map 接口的实现。此实现提供所有可选的映射操作，并允许使用 null 值和 null 键。（除了非同步和允许使用 null 之外，HashMap 类与 Hashtable 大致相同。）此类不保证映射的顺序，特别是它不保证该顺序恒久不变。</em></p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><em>基于哈希表的 Map 接口的实现。此实现提供所有可选的映射操作，并允许使用 null 值和 null 键。（除了非同步和允许使用 null 之外，HashMap 类与 Hashtable 大致相同。）此类不保证映射的顺序，特别是它不保证该顺序恒久不变。</em></p>
 <p>(Hash table based implementation of the Map interface. This implementation provides all of the optional map operations, and permits null values and the null key. (The HashMap class is roughly equivalent to Hashtable, except that it is unsynchronized and permits nulls.) This class makes no guarantees as to the order of the map; in particular, it does not guarantee that the order will remain constant over time.  )</p>
 <p><em>此实现假定哈希函数将元素适当地分布在各桶(buckets)之间，可为基本操作（get 和 put）提供稳定的性能。迭代 collection 视图所需的时间与 HashMap 实例的“容量”（桶的数量）及其大小（键-值映射关系数）成比例。所以，如果迭代性能很重要，则不要将初始容量设置得太高（或将加载因子设置得太低）。</em> </p>
 <p>(This implementation provides constant-time performance for the basic operations (get and put), assuming the hash function disperses the elements properly among the buckets. Iteration over collection views requires time proportional to the “capacity” of the HashMap instance (the number of buckets) plus its size (the number of key-value mappings). Thus, it’s very important not to set the initial capacity too high (or the load factor too low) if iteration performance is important. )</p>
@@ -509,7 +506,7 @@
     <published>2017-05-06T09:40:24.150Z</published>
     <updated>2017-05-06T09:54:52.432Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><em>List 接口的链接列表实现。实现所有可选的列表操作，并且允许所有元素（包括 null）。除了实现 List 接口外，LinkedList 类还为在列表的开头及结尾 get、remove 和 insert 元素提供了统一的命名方法。这些操作允许将链接列表用作堆栈、队列或双端队列。</em></p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><em>List 接口的链接列表实现。实现所有可选的列表操作，并且允许所有元素（包括 null）。除了实现 List 接口外，LinkedList 类还为在列表的开头及结尾 get、remove 和 insert 元素提供了统一的命名方法。这些操作允许将链接列表用作堆栈、队列或双端队列。</em></p>
 <p>（Doubly-linked list implementation of the List and Deque interfaces. Implements all optional list operations, and permits all elements (including null).All of the operations perform as could be expected for a doubly-linked list. Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index. ）</p>
 <p><em>所有操作都是按照双重链接列表（doubly-linked list）的需要执行的。在列表中编索引的操作将从开头或结尾遍历列表（从靠近指定索引的一端）。</em></p>
 <p>（All of the operations perform as could be expected for a doubly-linked list. Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index. ）<br><a id="more"></a></p>
@@ -572,7 +569,7 @@
     <published>2017-05-06T09:21:36.176Z</published>
     <updated>2017-05-06T09:37:32.700Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><em>List 接口的大小可变数组的实现。实现了所有可选列表操作，并允许包括 null 在内的所有元素。除了实现 List 接口外，此类还提供一些方法来操作内部用来存储列表的数组的大小。</em></p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><em>List 接口的大小可变数组的实现。实现了所有可选列表操作，并允许包括 null 在内的所有元素。除了实现 List 接口外，此类还提供一些方法来操作内部用来存储列表的数组的大小。</em></p>
 <p>（Resizable-array implementation of the List interface. Implements all optional list operations, and permits all elements, including null. In addition to implementing the List interface, this class provides methods to manipulate the size of the array that is used internally to store the list.）</p>
 <p><em>每个 ArrayList 实例都有一个容量。该容量是指用来存储列表元素的数组的大小。它总是至少等于列表的大小。随着向 ArrayList 中不断添加元素，其容量也自动增长。</em></p>
 <p>（Each ArrayList instance has a capacity. The capacity is the size of the array used to store the elements in the list. It is always at least as large as the list size. As elements are added to an ArrayList, its capacity grows automatically. ）<br><a id="more"></a></p>
@@ -628,7 +625,7 @@
     <published>2017-05-06T09:06:41.622Z</published>
     <updated>2017-05-06T09:07:08.773Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><em>在给定的一个数据中，我们有时候需要将数据对象进行某种顺序排列，常见的排列方式为升序或是降序，冒泡算法是处理这类排序的经典方法</em>。</p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><em>在给定的一个数据中，我们有时候需要将数据对象进行某种顺序排列，常见的排列方式为升序或是降序，冒泡算法是处理这类排序的经典方法</em>。</p>
 <blockquote>
 <p>给定一个数组</p>
 </blockquote>
@@ -701,7 +698,7 @@
     <published>2017-05-06T08:49:33.558Z</published>
     <updated>2017-05-06T09:19:58.476Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><em>容器（Collection） 层次结构中的根（root）接口。Collection 表示一组对象，这些对象也称为 collection 的元素。一些 collection 允许有重复的元素，而另一些则不允许。一些 collection 是有序的，而另一些则是无序的。JDK 不提供此接口的任何直接 实现：它提供更具体的子接口（如 Set 和 List）实现。此接口通常用来传递 collection，并在需要最大普遍性的地方操作这些 collection。</em></p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><em>容器（Collection） 层次结构中的根（root）接口。Collection 表示一组对象，这些对象也称为 collection 的元素。一些 collection 允许有重复的元素，而另一些则不允许。一些 collection 是有序的，而另一些则是无序的。JDK 不提供此接口的任何直接 实现：它提供更具体的子接口（如 Set 和 List）实现。此接口通常用来传递 collection，并在需要最大普遍性的地方操作这些 collection。</em></p>
 <p>（The root interface in the collection hierarchy. A collection represents a group of objects, known as its elements. Some collections allow duplicate elements and others do not. Some are ordered and others unordered. The JDK does not provide any direct implementations of this interface: it provides implementations of more specific subinterfaces like Set and List. This interface is typically used to pass collections around and manipulate them where maximum generality is desired.）<br><a id="more"></a></p>
 <p><img src="1.jpg" alt="loading~~~"></p>
 <blockquote>
@@ -740,7 +737,7 @@
     <published>2017-05-06T07:11:01.697Z</published>
     <updated>2017-05-06T08:24:25.574Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="为什么使用迭代器"><a href="#为什么使用迭代器" class="headerlink" title="为什么使用迭代器?"></a>为什么使用迭代器?</h2><ul>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="为什么使用迭代器"><a href="#为什么使用迭代器" class="headerlink" title="为什么使用迭代器?"></a>为什么使用迭代器?</h2><ul>
 <li>数组的遍历，可以通过for循环来实现，其原因是数组对于数据的储存是有序的(order)；但是，对于Set这种无序(no order)              的数据结构，就无法通过for循环来实现，此时，我们就需要引入一种新的访问方式来实现对数据的操作——迭代器。<a id="more"></a>
 </li>
 </ul>
