@@ -440,7 +440,7 @@
     <link href="http://yoursite.com/2017/05/06/%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E6%80%BB%E7%BB%93_four/"/>
     <id>http://yoursite.com/2017/05/06/常用容器总结_four/</id>
     <published>2017-05-06T09:55:30.318Z</published>
-    <updated>2017-05-06T11:14:23.505Z</updated>
+    <updated>2017-05-07T07:36:22.964Z</updated>
     
     <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><em>基于哈希表的 Map 接口的实现。此实现提供所有可选的映射操作，并允许使用 null 值和 null 键。（除了非同步和允许使用 null 之外，HashMap 类与 Hashtable 大致相同。）此类不保证映射的顺序，特别是它不保证该顺序恒久不变。</em></p>
 <p>(Hash table based implementation of the Map interface. This implementation provides all of the optional map operations, and permits null values and the null key. (The HashMap class is roughly equivalent to Hashtable, except that it is unsynchronized and permits nulls.) This class makes no guarantees as to the order of the map; in particular, it does not guarantee that the order will remain constant over time.  )</p>
