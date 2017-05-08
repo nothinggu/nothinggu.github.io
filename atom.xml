@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-06T17:06:01.395Z</updated>
+  <updated>2017-05-07T15:38:38.324Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>教你搭博客</title>
+    <link href="http://yoursite.com/2017/05/07/%E6%95%99%E4%BD%A0%E6%90%AD%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://yoursite.com/2017/05/07/教你搭博客（一）/</id>
+    <published>2017-05-07T14:20:40.961Z</published>
+    <updated>2017-05-07T15:38:38.324Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>最初用了十五个小时左右亲手搭了一个博客,踩过了一个又一个坑,但同时学习到了很多东西,现在来教教大家怎么搭好一个具有个性的博客,我会尽量注重细节,让大家在搭建博客的过程中也有所收获.</p>
+</blockquote>
+<h3 id="初心"><a href="#初心" class="headerlink" title="初心"></a>初心</h3><blockquote>
+<p>为什么我要搭建一个个人博客?为什么不使用博客平台呢?(如博客园,CSDN)<br>首先,我要明确一个态度—-对于一个追求技术的人来说,博客不仅是技术的交流平台,更加类似于一个运用知识的平台.站主现在是一名学生,由于相关技术与知识全靠自学,所以不能拥有系统的知识,所以只能通过填补漏缺来弥补知识缺陷.对于我来说,搭建个人博客类似于做一个可供维护的项目,一切代码对于我来说是完全可控的,因此我希望对于技术有所追求的朋友搭建个人博客.</p>
+</blockquote>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><blockquote>
+<p>现在搭建博客,是一件很容易的事情,网络提供给我们了很多模板,但为什么我花了很长时间才弄好它呢?其实搭建博客本身不是一件难事,困难在于不同的电脑上有很多微妙的不同,有时间可能是一个小小的插件,甚至是一点前端程序员无比熟悉的小知识点,就可以让小白绕很大一圈.本人最初接触过前端(现在主要写java),所以略有了解,如果遇到什么问题,大家可以留言或联系我,我会尽量解答.</p>
+</blockquote>
+<h2 id="最初准备"><a href="#最初准备" class="headerlink" title="最初准备"></a>最初准备</h2><p>现在我们开始吧!</p>
+<p>首先准备好需要的工具:</p>
+<ul>
+<li>我下载的是最新版<strong><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></strong></li>
+<li><strong><a href="https://git-scm.com/downloads" target="_blank" rel="external">git</a></strong>(这个貌似需要翻墙),没有翻墙的朋友从这里下载:<strong><a href="https://git-scm.com/downloads" target="_blank" rel="external">点我</a></strong></li>
+</ul>
+<p>ok,先准备好这些,现在需要配置github,<strong>注意记住自己的账号(Username)</strong></p>
+<p>登陆后,右上角有个”加号”形标志,点击New repository,然后只需要填写Repository name内容，内容为Username.github.io，这个将作为你的博客域名</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/css/lib/hint.min.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot;
+    
+    </summary>
+    
+      <category term="HEXO" scheme="http://yoursite.com/categories/HEXO/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>win10_java_环境变量设置</title>

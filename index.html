@@ -329,6 +329,182 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/07/教你搭博客（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Allen Gu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/pic2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I'm NOthing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/07/教你搭博客（一）/" itemprop="url">教你搭博客</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-07T22:20:40+08:00">
+                2017-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HEXO/" itemprop="url" rel="index">
+                    <span itemprop="name">HEXO</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/07/教你搭博客（一）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/05/07/教你搭博客（一）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/05/07/教你搭博客（一）/" class="leancloud_visitors" data-flag-title="教你搭博客">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>最初用了十五个小时左右亲手搭了一个博客,踩过了一个又一个坑,但同时学习到了很多东西,现在来教教大家怎么搭好一个具有个性的博客,我会尽量注重细节,让大家在搭建博客的过程中也有所收获.</p>
+</blockquote>
+<h3 id="初心"><a href="#初心" class="headerlink" title="初心"></a>初心</h3><blockquote>
+<p>为什么我要搭建一个个人博客?为什么不使用博客平台呢?(如博客园,CSDN)<br>首先,我要明确一个态度—-对于一个追求技术的人来说,博客不仅是技术的交流平台,更加类似于一个运用知识的平台.站主现在是一名学生,由于相关技术与知识全靠自学,所以不能拥有系统的知识,所以只能通过填补漏缺来弥补知识缺陷.对于我来说,搭建个人博客类似于做一个可供维护的项目,一切代码对于我来说是完全可控的,因此我希望对于技术有所追求的朋友搭建个人博客.</p>
+</blockquote>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><blockquote>
+<p>现在搭建博客,是一件很容易的事情,网络提供给我们了很多模板,但为什么我花了很长时间才弄好它呢?其实搭建博客本身不是一件难事,困难在于不同的电脑上有很多微妙的不同,有时间可能是一个小小的插件,甚至是一点前端程序员无比熟悉的小知识点,就可以让小白绕很大一圈.本人最初接触过前端(现在主要写java),所以略有了解,如果遇到什么问题,大家可以留言或联系我,我会尽量解答.</p>
+</blockquote>
+<h2 id="最初准备"><a href="#最初准备" class="headerlink" title="最初准备"></a>最初准备</h2><p>现在我们开始吧!</p>
+<p>首先准备好需要的工具:</p>
+<ul>
+<li>我下载的是最新版<strong><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></strong></li>
+<li><strong><a href="https://git-scm.com/downloads" target="_blank" rel="external">git</a></strong>(这个貌似需要翻墙),没有翻墙的朋友从这里下载:<strong><a href="https://git-scm.com/downloads" target="_blank" rel="external">点我</a></strong></li>
+</ul>
+<p>ok,先准备好这些,现在需要配置github,<strong>注意记住自己的账号(Username)</strong></p>
+<p>登陆后,右上角有个”加号”形标志,点击New repository,然后只需要填写Repository name内容，内容为Username.github.io，这个将作为你的博客域名</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/win10_java_环境变量设置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1015,168 +1191,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/用java写一个简单的文件拷贝程序吧/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Allen Gu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/pic2.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I'm NOthing">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/06/用java写一个简单的文件拷贝程序吧/" itemprop="url">用java写一个简单的文件拷贝程序吧</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T18:26:30+08:00">
-                2017-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JAVA/" itemprop="url" rel="index">
-                    <span itemprop="name">JAVA</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/06/用java写一个简单的文件拷贝程序吧/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/06/用java写一个简单的文件拷贝程序吧/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/05/06/用java写一个简单的文件拷贝程序吧/" class="leancloud_visitors" data-flag-title="用java写一个简单的文件拷贝程序吧">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/css/lib/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>代码:</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">public static void copyFile(String srcPath, String destPath) throws IOException &#123;</div><div class="line">        //建立File对象的来源与目的</div><div class="line">        File src = new File(srcPath);</div><div class="line">        File dest = new File(destPath);</div><div class="line">        </div><div class="line">        //由于只能拷贝文件,所以判定输入流是否为文件</div><div class="line">        if(!src.isFile()) &#123;</div><div class="line">            System.out.println("只能拷贝文件!");</div><div class="line">            throw new IOException("只能拷贝文件!");</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        //文件输入输出</div><div class="line">        InputStream is = new FileInputStream(src);</div><div class="line">        OutputStream os = new FileOutputStream(dest);</div><div class="line">        </div><div class="line">        //读取文件大小,并循环写出文件</div><div class="line">        byte[] flush = new byte[1024];</div><div class="line">        int len = 0;</div><div class="line">        while(-1 != (len = is.read(flush))) &#123;</div><div class="line">            os.write(flush, 0, len);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        //刷新此输出流并强制写出所有缓冲的输出字节</div><div class="line">        os.flush();</div><div class="line">        </div><div class="line">        //释放资源(一般先打开的后关闭)</div><div class="line">        os.close();</div><div class="line">        is.close();</div><div class="line">        </div><div class="line">        System.out.println("拷贝成功!");</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-    
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1226,7 +1240,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1237,7 +1251,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1248,7 +1262,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1267,7 +1281,7 @@
 
         <div class="category-all-page">
             <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ALGORITHMS/">ALGORITHMS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DATA-STRUCTURES/">DATA STRUCTURES</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><span class="category-list-count">7</span></li></ul>
+              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ALGORITHMS/">ALGORITHMS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DATA-STRUCTURES/">DATA STRUCTURES</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><span class="category-list-count">7</span></li></ul>
             </div>
         </div>
 
